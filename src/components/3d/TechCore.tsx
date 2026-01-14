@@ -4,7 +4,7 @@ import { Sphere, MeshDistortMaterial } from '@react-three/drei';
 import { Mesh } from 'three';
 
 const TechCore = () => {
-    const meshRef = useRef<Mesh>(null);
+    const meshRef = useRef<Mesh>(null!);
 
     useFrame((state) => {
         const time = state.clock.getElapsedTime();
