@@ -1,0 +1,44 @@
+﻿src/App.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/3d/TechCore.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+src/components/3d/TechCore.tsx(6,21): error TS2554: Expected 1 arguments, but got 0.
+src/components/3d/TechCore.tsx(11,29): error TS2339: Property 'rotation' does not exist on type '{}'.
+src/components/3d/TechCore.tsx(12,29): error TS2339: Property 'rotation' does not exist on type '{}'.
+src/components/3d/TechCore.tsx(18,21): error TS2322: Type 'RefObject<unknown>' is not assignable to type 'Ref<Mesh<BufferGeometry<NormalBufferAttributes, BufferGeometryEventMap>, Material | Material[], Object3DEventMap>> | undefined'.
+  Type 'RefObject<unknown>' is not assignable to type 'RefObject<Mesh<BufferGeometry<NormalBufferAttributes, BufferGeometryEventMap>, Material | Material[], Object3DEventMap> | null>'.
+    Type 'unknown' is not assignable to type 'Mesh<BufferGeometry<NormalBufferAttributes, BufferGeometryEventMap>, Material | Material[], Object3DEventMap> | null'.
+src/components/About.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/About.tsx(6,21): error TS18046: 'cvData' is of type 'unknown'.
+src/components/Contact.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/Contact.tsx(3,10): error TS6133: 'Mail' is declared but its value is never read.
+src/components/Contact.tsx(7,19): error TS18046: 'cvData' is of type 'unknown'.
+src/components/Contact.tsx(7,42): error TS7006: Parameter 's' implicitly has an 'any' type.
+src/components/Experience.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/Experience.tsx(7,21): error TS18046: 'cvData' is of type 'unknown'.
+src/components/Experience.tsx(7,42): error TS7006: Parameter 's' implicitly has an 'any' type.
+src/components/Experience.tsx(7,86): error TS7006: Parameter 'c' implicitly has an 'any' type.
+src/components/Experience.tsx(23,35): error TS7006: Parameter 'job' implicitly has an 'any' type.
+src/components/Experience.tsx(23,40): error TS7006: Parameter 'index' implicitly has an 'any' type.
+src/components/Experience.tsx(41,64): error TS7006: Parameter 'resp' implicitly has an 'any' type.
+src/components/Experience.tsx(41,70): error TS7006: Parameter 'i' implicitly has an 'any' type.
+src/components/Hero.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+src/components/Hero.tsx(9,22): error TS18046: 'cvData' is of type 'unknown'.
+src/components/Layout.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/Layout.tsx(4,19): error TS7031: Binding element 'children' implicitly has an 'any' type.
+src/components/Navbar.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+src/components/Navbar.tsx(18,21): error TS18046: 'cvData' is of type 'unknown'.
+src/components/Navbar.tsx(18,44): error TS7006: Parameter 's' implicitly has an 'any' type.
+src/components/Navbar.tsx(19,19): error TS18046: 'cvData' is of type 'unknown'.
+src/components/Navbar.tsx(19,42): error TS7006: Parameter 's' implicitly has an 'any' type.
+src/components/Navbar.tsx(37,39): error TS7006: Parameter 'social' implicitly has an 'any' type.
+src/components/Projects.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/Skills.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/Skills.tsx(6,24): error TS18046: 'cvData' is of type 'unknown'.
+src/components/Skills.tsx(6,45): error TS7006: Parameter 's' implicitly has an 'any' type.
+src/components/Skills.tsx(6,85): error TS7006: Parameter 'c' implicitly has an 'any' type.
+src/components/Skills.tsx(20,38): error TS7006: Parameter 'category' implicitly has an 'any' type.
+src/components/Skills.tsx(20,48): error TS7006: Parameter 'index' implicitly has an 'any' type.
+src/components/Skills.tsx(30,64): error TS7006: Parameter 'skill' implicitly has an 'any' type.
+src/components/Skills.tsx(30,71): error TS7006: Parameter 'i' implicitly has an 'any' type.
+src/main.tsx(6,12): error TS2345: Argument of type 'HTMLElement | null' is not assignable to parameter of type 'Container'.
+  Type 'null' is not assignable to type 'Container'.
+src/utils/loadCv.ts(2,19): error TS2307: Cannot find module '../assets/cv_es.yaml?raw' or its corresponding type declarations.

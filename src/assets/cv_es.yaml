@@ -1,0 +1,136 @@
+heading:
+  name: "Hernan Dario Mojica Diaz" # mandatory
+  language: "es" # default "en"
+subheading:
+  - type: links
+    content:
+      - name: "13hernanm@gmail.com"
+        highlight: false
+        show_below: true
+  - type: socials
+    content:
+      - type: github
+        url: "https://github.com/hmechanic"
+        show_below: false
+      - type: linkedin
+        url: "https://www.linkedin.com/in/hmechanic/"
+        show_below: false
+
+professional_profile:
+    title: "Perfil Profesional"
+    content: "
+    Soy ingeniero mecánico con más de tres años de experiencia en desarrollo de software y análisis de datos, especializado en la creación de soluciones basadas en Python y JavaScript que integran bases de datos SQL y servicios web. Mi trayectoria combina la modelación de sistemas energéticos con la implementación de arquitecturas de microservicios, lo que me permite diseñar y desarrollar aplicaciones que cumplen con los estándares de calidad y facilitan la toma de decisiones basada en datos. 
+    
+    En mi rol actual en SatEmis, diseñé y desplegué la arquitectura de microservicios utilizando nest.js, Docker y FastAPI, optimizando la ingestión y el procesamiento de datos satelitales y garantizando una gestión eficiente en Google Cloud Platform. Además, lideré la integración de bases de datos SQL y NoSQL para soportar grandes volúmenes de información, mejorando la disponibilidad y la consistencia de los datos críticos. Previamente, coordiné equipos multidisciplinarios en la construcción del modelo energético nacional con el framework TIMES, desarrollando herramientas analíticas en Python que automatizaron el tratamiento de conjuntos de datos extensos y facilitaron la generación de reportes estratégicos.
+    "
+
+sections:
+  - type: education
+    content:
+      - name: "Educación"  
+        entity:
+          - university: "Universidad nacional de Colombia"
+            location: "Bogotá, Colombia"
+            dates: "Febrero de 2018 - Diciembre de 2024"
+            degree: "Grado en *Ingeniería Mecánica*"
+            thesis_title: "Análisis fluido dinámico de una miniturbina de propulsión"
+            supervisor: "Dr. Juan Miguel Mantilla"
+
+  - type: skills
+    content:
+      - name: "Habilidades"
+        entity:
+          - name: "Idiomas Hablados"
+            data: "Inglés B2 (Profesional)"
+          - name: "Lenguajes de Programación, Herramientas y Tecnologías"
+            data: "Python, JavaScript, Git, Linux, Google Cloud Plataform (GCP), nest.js, Docker, Pytorch"
+          - name: "LLMs y Herramientas de IA"
+            data: "Deep Learning, Machine Learning, Bases de datos (SQL, No SQL y vectoriales), MCP, LlamaIndex, Ollama"
+          - name: "Herramientas y Tecnologías de Ingeniería"
+            data: "TIMES Model, Autodesk Software, Micrisoft Office, Ansys, OpenFoam"
+          - name: "Habilidades Blandas"
+            data: "Trabajo en Equipo, Liderazgo, Resolución de Problemas, Comunicación, Adaptabilidad"
+
+  - type: experience
+    content:
+      - name: "Experiencia Profesional"
+        entity:
+          - organization: "SatEmis"
+            dates: "Agosto 2025 - Presente"
+            position: "Desarrollador de Software e Ingeniero de IA"
+            responsibilities:
+              - "Desarrollar la arquitectura de microservicios para la plataforma SatEmis utilizando nest.js y Docker."
+              - "Diseñar e implementar algoritmos de IA para el procesamiento y análisis de datos satelitales."
+              - "Optimizar los recursos de computación en la nube en Google Cloud Platform (GCP) para el manejo y almacenamiento eficiente de datos."
+              - "Comunicación efectiva con miembros del equipo y partes interesadas."
+              - "Desarrollar una interfaz amigable para la visualización e interpretación de datos."
+              - "Desarrollar microservicios para la ingesta, procesamiento y análisis de datos utilizando FastAPI."
+              - "Arquitectura y gestión de bases de datos utilizando SQL y NoSQL."
+              
+          - organization: "Universidad nacional de Colombia"
+            dates: "Febrero de 2024 - Julio de 2025"
+            position: "Investigador y analista de sistemas energéticos"
+            responsibilities:
+              - "Desarrollo del modelo de referencia energético nacional de Colombia utilizando el framework VEDA de TIMES (IEA-ETSAP)."
+              - "Recolección y tratamiendo de datos del sistema energético colombiano por sectores económicos y regiones."
+              - "Procesamiento de grandes conjuntos de datos y desarrollo de herramientas analíticas utilizando Python."
+              - "Proyección de escenarios de transición energética alineados con los planes nacionales de cambio climático."
+              - "Liderazgo y coordinación de equipos multidiciplinarios."
+              - "Comunicación efectiva de resultados técnicos a audiencias no técnicas."
+              
+          - organization: "Universidad nacional de Colombia"
+            dates: "Abril de 2022 - Febrero de 2024"
+            position: "Asistente de Investigación - Facultad de Ingeniería"
+            responsibilities:
+              - "Apoyo en el desarrollo de la sección de mitigación del Plan Integral de Cambio Climático (PIGCC) para empresas del sector eléctrico participantes en la Alianza del Sector Eléctrico Carbono Neutro (ASECN)."
+              - "Cuantificación de huellas de carbono de Alcance 1, 2 y 3 utilizando la metodología del Protocolo GHG."
+              - "Desarrollo de modelos estadísticos para proyectar emisiones basadas en variables operacionales."
+              - "Evaluación de medidas de mitigación como eficiencia energética, sustitución de combustibles, cambios en la matriz energética y compensación de carbono."
+              - "Realización de estudios estadísticos sobre la relación entre fenómenos climáticos y la generación de energía por fuente."
+              - "Preparación de presentaciones para la interacción con stakeholders y la difusión de resultados."
+
+      - name: "Docencia y Voluntariado"
+        entity:
+          - organization: "Universidad nacional de Colombia"
+            dates: "Febrero de 2023 - Noviembre de 2023"
+            position: "Instructor"
+            supervisor: "M.Sc Luis Carlos Trujillo"
+            department: "Departamento de Ciencias Humanas"
+            location: "Bogotá, Colombia"
+            responsibilities:
+              - "Enseñanza de programación introductoria con Python a estudiantes de la Facultad de Ciencias Humanas."
+              - "Diseño de una estrategia de enseñanza adaptada a estudiantes no ingenieros."
+              - "Creación de presentaciones educativas para mejorar la transferencia de conocimientos."
+              - "Introducción de conceptos básicos de Git para la gestión colaborativa de proyectos."
+          
+#  - type: newpage
+
+  - type: experience
+    content:
+      - name: "Certificaciones"
+        entity:
+          - organization: "Introducción al análisis numérico"
+            dates: "Graduado en Noviembre de 2020"
+            position: "Coursera"
+            certificate: "https://drive.google.com/file/d/1jTdB9KHhdZ72HzhHKaGwvHEhy1stSp0Q/view?usp=sharing"
+          - organization: "Ingeniería de Procesos para la Transición Energética"
+            dates: "Graduado en Julio de 2023"
+            position: "Universidad nacional de Colombia"
+            certificate: "https://drive.google.com/file/d/1C1yyJAA1Mp0S8c8LYSN18HA8erlOOZ_z/view?usp=sharing"
+          - organization: "MCP: Build Rich-Context AI Apps"
+            dates: "October 2025"
+            position: "DeepLearning.AI"
+            certificate: "https://learn.deeplearning.ai/accomplishments/ec70bf5a-587e-4179-bf0f-1fd46fb9d144?usp=sharing"
+          - organization: "Sustainable Supply Chain Management"
+            dates: "Graduated December 2025"
+            position: "MITx"
+            certificate: "https://courses.edx.org/certificates/20176b453ed94252877f18951f6afa63"
+          - organization: "Machine Learning with Python: from Linear Models to Deep Learning"
+            dates: "Graduated December 2025"
+            position: "MITx"
+            certificate: "https://courses.edx.org/certificates/c707c61237404b8fa6735f1a7bd99c73"
+  
+
+  - type: publications
+    title: "Publicaciones"
+    bibfile: publications.bib

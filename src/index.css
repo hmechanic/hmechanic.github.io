@@ -1,0 +1,40 @@
+/* Font imported in index.html */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background-color: #050505;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+@layer utilities {
+  .text-neon-cyan {
+    color: #00f3ff;
+    text-shadow: 0 0 5px #00f3ff, 0 0 10px #00f3ff;
+  }
+
+  .text-neon-magenta {
+    color: #ff00ff;
+    text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff;
+  }
+
+  .border-neon-cyan {
+    border-color: #00f3ff;
+    box-shadow: 0 0 5px #00f3ff;
+  }
+
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
