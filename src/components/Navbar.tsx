@@ -22,9 +22,14 @@ const Navbar = () => {
     return (
         <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-black/80 backdrop-blur-md py-4' : 'bg-transparent py-6'}`}>
             <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-                <div className="text-2xl font-bold tracking-tighter text-neon-cyan cursor-pointer" onClick={() => window.scrollTo(0, 0)}>
+                <button
+                    type="button"
+                    aria-label="Volver al inicio"
+                    className="text-2xl font-bold tracking-tighter text-neon-cyan cursor-pointer bg-transparent border-0 p-0"
+                    onClick={() => window.scrollTo(0, 0)}
+                >
                     H<span className="text-white">Mechanic</span>
-                </div>
+                </button>
 
                 {/* Desktop Menu */}
                 <div className="hidden md:flex items-center space-x-8">
@@ -50,14 +55,22 @@ const Navbar = () => {
                 </div>
 
                 {/* Mobile Toggle */}
-                <div className="md:hidden text-white" onClick={() => setIsOpen(!isOpen)}>
+                <button
+                    type="button"
+                    aria-label={isOpen ? 'Cerrar menú' : 'Abrir menú'}
+                    aria-expanded={isOpen}
+                    aria-controls="mobile-menu"
+                    className="md:hidden text-white bg-transparent border-0 p-0"
+                    onClick={() => setIsOpen(!isOpen)}
+                >
                     {isOpen ? <X size={28} /> : <Menu size={28} />}
-                </div>
+                </button>
             </div>
 
             {/* Mobile Menu */}
             {isOpen && (
                 <motion.div
+                    id="mobile-menu"
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     className="md:hidden absolute top-full left-0 w-full bg-black/95 backdrop-blur-xl border-t border-white/10 p-6 flex flex-col space-y-6"

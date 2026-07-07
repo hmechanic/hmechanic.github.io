@@ -1,22 +1,56 @@
-import { Suspense } from 'react';
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls } from '@react-three/drei';
+import { lazy, Suspense, useState } from 'react';
 import { motion } from 'framer-motion';
 import { cvData } from '../utils/loadCv';
-import CombustionReaction from './3d/CombustionReaction';
+
+// Lazily loaded so the three.js bundle is split out of the main chunk.
+const HeroBackground = lazy(() => import('./3d/HeroBackground'));
+
+// Schedule heavy work (three.js parse + shader compile + texture upload) for a
+// moment when the browser is idle. The synchronous WebGL warm-up is unavoidable,
+// so the goal is to place it where nothing else is animating.
+const whenIdle = (cb: () => void) => {
+    const w = window as typeof window & {
+        requestIdleCallback?: (cb: () => void, opts?: { timeout: number }) => number;
+    };
+    if (w.requestIdleCallback) w.requestIdleCallback(cb, { timeout: 600 });
+    else window.setTimeout(cb, 200);
+};
 
 const Hero = () => {
     const { name } = cvData.heading;
     const role = "Ingeniero Mecánico & Desarrollador de Software";
+    // Mount the 3D background only AFTER the intro text animation has fully settled,
+    // then wait for an idle slot. This keeps the WebGL warm-up hitch strictly out of
+    // the text animation's tail, where it was being perceived as a stutter.
+    const [showBackground, setShowBackground] = useState(false);
 
     return (
-        <section id="home" className="h-screen w-full flex flex-col md:flex-row items-center justify-center relative overflow-hidden pt-20">
+        <section id="home" className="h-screen w-full flex items-center relative overflow-hidden pt-20">
+            {/* Full-bleed animated background (three.js loaded lazily + deferred to idle,
+                fading in so its warm-up never stutters the hero intro). */}
+            <div
+                className={`absolute inset-0 z-0 pointer-events-none transition-opacity duration-700 ${showBackground ? 'opacity-100' : 'opacity-0'}`}
+                aria-hidden="true"
+            >
+                {showBackground && (
+                    <Suspense fallback={null}>
+                        <HeroBackground />
+                    </Suspense>
+                )}
+            </div>
+
+            {/* Legibility overlay: darkens toward the left where the copy sits */}
+            <div className="absolute inset-0 z-[1] pointer-events-none bg-gradient-to-r from-dark-bg via-dark-bg/70 to-transparent" />
+            {/* Soft vertical vignette to seat the text against the scene */}
+            <div className="absolute inset-0 z-[1] pointer-events-none bg-gradient-to-b from-dark-bg/40 via-transparent to-dark-bg/60" />
+
             {/* Text Content */}
-            <div className="md:w-1/2 flex flex-col justify-center items-start px-8 md:pl-20 z-10">
+            <div className="relative z-10 w-full md:w-3/5 flex flex-col justify-center items-start px-8 md:pl-20">
                 <motion.div
                     initial={{ opacity: 0, x: -50 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8 }}
+                    onAnimationComplete={() => whenIdle(() => setShowBackground(true))}
                 >
                     <h2 className="text-neon-magenta font-mono text-lg mb-4 tracking-widest">
                         PORTAFOLIO 2026
@@ -46,17 +80,6 @@ const Hero = () => {
                         </a>
                     </div>
                 </motion.div>
-            </div>
-
-            {/* 3D Scene */}
-            <div className="w-full md:w-1/2 h-[50vh] md:h-full relative z-0">
-                <div className="absolute inset-0 bg-gradient-to-l from-black via-transparent to-transparent z-10 pointer-events-none" />
-                <Canvas className="w-full h-full">
-                    <Suspense fallback={null}>
-                        <CombustionReaction />
-                        <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={0.5} />
-                    </Suspense>
-                </Canvas>
             </div>
         </section>
     );

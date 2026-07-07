@@ -22,26 +22,23 @@ const About = () => {
                 </motion.div>
 
                 <div className="grid md:grid-cols-3 gap-12">
-                    <div className="md:col-span-2 text-gray-300 leading-loose text-lg text-justify whitespace-pre-line">
-                        <motion.p
-                            initial={{ opacity: 0 }}
-                            whileInView={{ opacity: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.2 }}
-                        >
-                            <div className="space-y-6 text-gray-300">
-                                <p>
-                                    Soy <span className="text-white font-bold">Ingeniero Mecánico</span> y <span className="text-white font-bold">desarrollador de software</span> con más de tres años de experiencia impulsando la <span className="text-neon-cyan">transición energética</span> mediante ciencia de datos y tecnología moderna.
-                                </p>
-                                <p>
-                                    Mi enfoque único combina el <span className="text-neon-purple">modelado matemático</span> de sistemas energéticos con arquitecturas de software robustas (<span className="text-neon-green font-mono">Python</span>, <span className="text-neon-green font-mono">SQL</span>, <span className="text-neon-green font-mono">Microservicios</span>) para resolver desafíos de descarbonización.
-                                </p>
-                                <p>
-                                    He liderado hitos clave, como la construcción del <span className="text-white font-semibold">modelo energético nacional de Colombia</span> bajo el marco TIMES y el despliegue de infraestructuras en la nube para el procesamiento de datos satelitales y emisiones. Apasionado por la innovación, integro <span className="text-neon-magenta font-bold">Inteligencia Artificial</span> y <span className="text-neon-magenta font-bold">Big Data</span> para diseñar sistemas de Monitoreo, Reporte y Verificación (MRV) que transforman datos complejos en decisiones estratégicas.
-                                </p>
-                            </div>
-                        </motion.p>
-                    </div>
+                    <motion.div
+                        className="md:col-span-2 space-y-6 text-gray-300 leading-loose text-lg"
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.2 }}
+                    >
+                        <p>
+                            Soy <span className="text-white font-bold">Ingeniero Mecánico</span> y <span className="text-white font-bold">desarrollador de software</span> con más de tres años de experiencia impulsando la <span className="text-neon-cyan">transición energética</span> mediante ciencia de datos y tecnología moderna.
+                        </p>
+                        <p>
+                            Mi enfoque único combina el <span className="text-neon-purple">modelado matemático</span> de sistemas energéticos con arquitecturas de software robustas (<span className="text-neon-green font-mono">Python</span>, <span className="text-neon-green font-mono">SQL</span>, <span className="text-neon-green font-mono">Microservicios</span>) para resolver desafíos de descarbonización.
+                        </p>
+                        <p>
+                            He liderado hitos clave, como la construcción del <span className="text-white font-semibold">modelo energético nacional de Colombia</span> bajo el marco TIMES y el despliegue de infraestructuras en la nube para el procesamiento de datos satelitales y emisiones. Apasionado por la innovación, integro <span className="text-neon-magenta font-bold">Inteligencia Artificial</span> y <span className="text-neon-magenta font-bold">Big Data</span> para diseñar sistemas de Monitoreo, Reporte y Verificación (MRV) que transforman datos complejos en decisiones estratégicas.
+                        </p>
+                    </motion.div>
 
                     {/* Stats/Highlight Box */}
                     <div className="relative">

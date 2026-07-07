@@ -26,7 +26,7 @@ const Projects = () => {
             title: "Deep Learning Concepts",
             description: "Implementación de modelos de Deep Learning y redes neuronales desde cero o utilizando frameworks modernos.",
             tech: ["Python", "PyTorch", "TensorFlow"],
-            github: "https://github.com/deep-leaning.ai",
+            github: "https://github.com/hmechanic/deep-leaning.ai",
             external: "#",
             featured: false
         }
@@ -48,7 +48,7 @@ const Projects = () => {
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {projects.map((project, index) => (
                         <motion.div
-                            key={index}
+                            key={project.title}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: index * 0.1 }}

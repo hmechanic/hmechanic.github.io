@@ -1,14 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-export interface SectionContent {
-    name: string;
-    entity: any;
-    [key: string]: any; // Allow other properties like url, type (for socials)
-}
-
-export interface Section {
-    type: string;
-    content: SectionContent[];
-}
+// Shape of the CV data loaded from `src/assets/cv_es.yaml`.
 
 export interface SkillCategory {
     name: string;
@@ -19,23 +9,51 @@ export interface Job {
     position: string;
     organization: string;
     dates: string;
-    responsibilities: string[];
+    responsibilities?: string[];
+    certificate?: string;
+    supervisor?: string;
+    department?: string;
+    location?: string;
 }
 
-export interface Social {
+/** A named group of entries inside a section (e.g. "Certificaciones"). */
+export interface SectionContentGroup<T = unknown> {
+    name: string;
+    entity: T[];
+}
+
+export type ExperienceGroup = SectionContentGroup<Job>;
+
+export interface Section<T = unknown> {
     type: string;
-    url: string;
+    title?: string;
+    bibfile?: string;
+    content?: SectionContentGroup<T>[];
+}
+
+/** An item under `subheading` — either a contact link or a social profile. */
+export interface SubheadingItem {
+    name?: string;
+    type?: string;
+    url?: string;
+    highlight?: boolean;
+    show_below?: boolean;
+}
+
+export interface SubheadingSection {
+    type: string;
+    content: SubheadingItem[];
 }
 
 export interface CvData {
-    sections: Section[];
-    subheading: Section[];
+    heading: {
+        name: string;
+        language?: string;
+    };
+    subheading: SubheadingSection[];
     professional_profile: {
         title: string;
         content: string;
     };
-    heading: {
-        name: string;
-    };
-    [key: string]: any;
+    sections: Section[];
 }

@@ -1,23 +1,73 @@
-# Deploy
-Pasos a seguir en GitHub:
+# HMechanic Portfolio
 
-Ve a tu repositorio en GitHub.
-Entra en Settings > Pages.
-En "Source", selecciona GitHub Actions (en lugar de "Deploy from a branch").
+Portafolio personal construido con React, TypeScript, Vite, Tailwind CSS y componentes 3D con Three.js.
 
-# React + Vite
+## Requisitos
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- Node.js 20 o superior.
+- pnpm 11.9.0. Si usas Corepack:
 
-Currently, two official plugins are available:
+```bash
+corepack enable
+corepack prepare pnpm@11.9.0 --activate
+```
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Instalación
 
-## React Compiler
+Instala las dependencias desde el lockfile de pnpm:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+pnpm install
+```
 
-## Expanding the ESLint configuration
+## Desarrollo local
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Levanta el servidor de desarrollo con hot reload:
+
+```bash
+pnpm run dev
+```
+
+Vite mostrará la URL local en la terminal, normalmente `http://localhost:5173/`.
+
+## Validación
+
+Ejecuta el linter:
+
+```bash
+pnpm run lint
+```
+
+Genera el build de producción:
+
+```bash
+pnpm run build
+```
+
+El resultado se crea en `dist/`.
+
+## Preview de producción
+
+Después de compilar, revisa localmente el build final:
+
+```bash
+pnpm run preview
+```
+
+## Estructura básica
+
+- `src/main.tsx`: punto de entrada de React.
+- `src/App.tsx`: composición principal del sitio.
+- `src/components/`: secciones y componentes reutilizables.
+- `src/components/3d/`: componentes visuales con Three.js.
+- `src/assets/`: contenido y recursos del portafolio.
+- `public/`: archivos estáticos servidos sin procesar.
+
+## Deploy en GitHub Pages
+
+El repositorio incluye un workflow en `.github/workflows/deploy.yml`. Para activarlo en GitHub:
+
+1. Abre el repositorio en GitHub.
+2. Ve a `Settings > Pages`.
+3. En `Source`, selecciona `GitHub Actions`.
+4. Haz push a `main` para ejecutar el despliegue.
