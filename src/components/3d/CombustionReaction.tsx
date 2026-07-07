@@ -247,7 +247,9 @@ const rand = (scale: number) => (Math.random() - 0.5) * scale;
 const randVec = (scale: number) => new THREE.Vector3(rand(scale), rand(scale), rand(scale));
 const randEuler = () => new THREE.Euler(Math.random() * Math.PI, Math.random() * Math.PI, Math.random() * Math.PI);
 
-const makeInitialParticles = (): Particle[] => {
+// Particle budget scales down on small/low-power screens: fewer molecules means
+// fewer draw calls and a lighter per-frame physics loop on mobile GPUs.
+const makeInitialParticles = (small: boolean): Particle[] => {
     const list: Particle[] = [];
     let id = 0;
     const base = (type: MoleculeType, position: THREE.Vector3, velocity: THREE.Vector3, spin: number): Particle => ({
@@ -264,22 +266,23 @@ const makeInitialParticles = (): Particle[] => {
         groupRef: { current: null },
     });
 
-    for (let i = 0; i < 4; i++)
+    const counts = small ? { ch4: 2, o2: 3, n2: 4 } : { ch4: 4, o2: 6, n2: 8 };
+    for (let i = 0; i < counts.ch4; i++)
         list.push(base('CH4', new THREE.Vector3(-4 + Math.random(), rand(4), rand(2)), new THREE.Vector3(0.5, 0, 0).add(randVec(0.2)), 0.5));
-    for (let i = 0; i < 6; i++)
+    for (let i = 0; i < counts.o2; i++)
         list.push(base('O2', new THREE.Vector3(4 - Math.random(), rand(4), rand(2)), new THREE.Vector3(-0.5, 0, 0).add(randVec(0.2)), 0.5));
-    for (let i = 0; i < 8; i++)
+    for (let i = 0; i < counts.n2; i++)
         list.push(base('N2', new THREE.Vector3(rand(8), rand(5), rand(3)), randVec(0.4), 0.2));
 
     return list;
 };
 
-const CombustionScene = ({ showLabels, reducedMotion }: { showLabels: boolean; reducedMotion: boolean }) => {
+const CombustionScene = ({ showLabels, reducedMotion, small }: { showLabels: boolean; reducedMotion: boolean; small: boolean }) => {
     const groupRef = useRef<THREE.Group>(null);
     // Particles live in state so the render list is React-driven, but their physics
     // fields are mutated in-place in useFrame WITHOUT setState. setParticles is only
     // called when the topology changes (a reaction spawns/removes molecules).
-    const [particles, setParticles] = useState<Particle[]>(makeInitialParticles);
+    const [particles, setParticles] = useState<Particle[]>(() => makeInitialParticles(small));
     const nextId = useRef(particles.length);
     // Fixed pool; never re-created, only mutated via refs in useFrame.
     const [explosions] = useState<ExplosionSlot[]>(() =>
@@ -415,10 +418,10 @@ const CombustionScene = ({ showLabels, reducedMotion }: { showLabels: boolean; r
             const alive = particles.filter((p) => !p.dead);
             const count = (t: MoleculeType) =>
                 alive.filter((p) => p.type === t).length + toAdd.filter((p) => p.type === t).length;
-            if (count('CH4') < 3) toAdd.push(makeReactant('CH4'));
-            if (count('O2') < 4) toAdd.push(makeReactant('O2'));
+            if (count('CH4') < (small ? 2 : 3)) toAdd.push(makeReactant('CH4'));
+            if (count('O2') < (small ? 2 : 4)) toAdd.push(makeReactant('O2'));
 
-            const MAX_PRODUCTS = 16;
+            const MAX_PRODUCTS = small ? 8 : 16;
             const products = alive.filter((p) => p.type === 'CO2' || p.type === 'H2O');
             if (products.length > MAX_PRODUCTS) {
                 products.slice(0, products.length - MAX_PRODUCTS).forEach((p) => { p.dead = true; });
@@ -462,11 +465,11 @@ const CombustionScene = ({ showLabels, reducedMotion }: { showLabels: boolean; r
 
 const CombustionReaction = () => {
     // Decide feature level once (labels off on small screens / reduced motion).
-    const { showLabels, reducedMotion } = useMemo(() => {
-        if (typeof window === 'undefined' || !window.matchMedia) return { showLabels: true, reducedMotion: false };
+    const { showLabels, reducedMotion, small } = useMemo(() => {
+        if (typeof window === 'undefined' || !window.matchMedia) return { showLabels: true, reducedMotion: false, small: false };
         const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        const small = window.matchMedia('(max-width: 768px)').matches;
-        return { showLabels: !reduced && !small, reducedMotion: reduced };
+        const isSmall = window.matchMedia('(max-width: 768px)').matches;
+        return { showLabels: !reduced && !isSmall, reducedMotion: reduced, small: isSmall };
     }, []);
 
     return (
@@ -481,9 +484,9 @@ const CombustionReaction = () => {
             <directionalLight position={[10, 10, 10]} intensity={1.2} color="#4444ff" />
             <directionalLight position={[-10, -10, -10]} intensity={1.2} color="#ff44ff" />
 
-            <CombustionScene showLabels={showLabels} reducedMotion={reducedMotion} />
+            <CombustionScene showLabels={showLabels} reducedMotion={reducedMotion} small={small} />
 
-            <Sparkles count={30} scale={20} size={1} opacity={0.18} speed={reducedMotion ? 0 : 0.2} color="#ffffff" />
+            <Sparkles count={small ? 12 : 30} scale={20} size={1} opacity={0.18} speed={reducedMotion ? 0 : 0.2} color="#ffffff" />
             <fog attach="fog" args={['#050505', 12, 35]} />
         </>
     );

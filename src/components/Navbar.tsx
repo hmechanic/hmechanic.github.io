@@ -99,6 +99,20 @@ const Navbar = () => {
                             {item.label}
                         </a>
                     ))}
+
+                    <div className="flex items-center gap-6 pt-4 border-t border-white/10">
+                        {socials.map((social) => (
+                            <a key={social.url} href={social.url} target="_blank" rel="noopener noreferrer" className="text-white hover:text-neon-magenta transition-colors">
+                                {social.type === 'github' && <FaGithub size={22} />}
+                                {social.type === 'linkedin' && <FaLinkedin size={22} />}
+                            </a>
+                        ))}
+                        {email && (
+                            <a href={`mailto:${email}`} className="text-white hover:text-neon-green transition-colors">
+                                <Mail size={22} />
+                            </a>
+                        )}
+                    </div>
                 </motion.div>
             )}
         </nav>

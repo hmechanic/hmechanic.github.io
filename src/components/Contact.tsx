@@ -15,7 +15,7 @@ const Contact = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                 >
                     <p className="text-neon-cyan font-mono mb-4">{t.contact.eyebrow}</p>
-                    <h2 className="text-5xl font-bold text-white mb-6">{t.contact.title}</h2>
+                    <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">{t.contact.title}</h2>
                     <p className="text-gray-400 text-lg mb-12">
                         {t.contact.body}
                     </p>

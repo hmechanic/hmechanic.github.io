@@ -17,7 +17,7 @@ const Experience = () => {
                 <motion.h2
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
-                    className="text-4xl font-bold mb-16 flex items-center"
+                    className="text-3xl sm:text-4xl font-bold mb-16 flex items-center"
                 >
                     <span className="text-neon-cyan mr-4">{t.experience.number}</span>
                     {t.experience.title}

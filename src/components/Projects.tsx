@@ -38,7 +38,7 @@ const Projects = () => {
                 <motion.h2
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
-                    className="text-4xl font-bold mb-16 flex items-center justify-end"
+                    className="text-3xl sm:text-4xl font-bold mb-16 flex items-center justify-end"
                 >
                     <span className="mr-6 h-px bg-white/20 flex-grow max-w-xs"></span>
                     {t.projects.title}

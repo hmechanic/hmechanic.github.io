@@ -15,7 +15,7 @@ const About = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
                 >
-                    <h2 className="text-4xl font-bold mb-12 flex items-center">
+                    <h2 className="text-3xl sm:text-4xl font-bold mb-12 flex items-center">
                         <span className="text-neon-purple mr-4">{t.about.number}</span>
                         {profile.title}
                         <span className="ml-6 h-px bg-white/20 flex-grow max-w-xs"></span>

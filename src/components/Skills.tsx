@@ -30,7 +30,10 @@ const Skills = () => {
                         >
                             <h3 className="text-xl font-bold text-neon-magenta mb-4">{category.name}</h3>
                             <div className="flex flex-wrap gap-2">
-                                {category.data.split(',').map(skill => skill.trim()).map(skill => (
+                                {/* Split on top-level commas only, so items with an
+                                    internal list like "Databases (SQL, NoSQL, vector)"
+                                    stay in a single chip instead of breaking apart. */}
+                                {category.data.split(/,(?![^(]*\))/).map(skill => skill.trim()).filter(Boolean).map(skill => (
                                     <span key={skill} className="px-3 py-1 bg-black/50 border border-white/20 rounded-full text-sm text-gray-300 hover:border-neon-cyan hover:text-white transition-colors cursor-default">
                                         {skill}
                                     </span>
