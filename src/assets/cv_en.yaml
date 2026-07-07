@@ -1,0 +1,136 @@
+heading:
+  name: "Hernan Dario Mojica Diaz" # mandatory
+  language: "en" # default "en"
+subheading:
+  - type: links
+    content:
+      - name: "13hernanm@gmail.com"
+        highlight: false
+        show_below: true
+  - type: socials
+    content:
+      - type: github
+        url: "https://github.com/hmechanic"
+        show_below: false
+      - type: linkedin
+        url: "https://www.linkedin.com/in/hmechanic/"
+        show_below: false
+
+professional_profile:
+    title: "Professional Profile"
+    content: "
+    I am a mechanical engineer with more than three years of experience in software development and data analysis, specialized in building solutions based on Python and JavaScript that integrate SQL databases and web services. My background combines the modeling of energy systems with the implementation of microservice architectures, which lets me design and develop applications that meet quality standards and enable data-driven decision making.
+
+    In my current role at SatEmis, I designed and deployed the microservice architecture using nest.js, Docker and FastAPI, optimizing the ingestion and processing of satellite data and ensuring efficient management on Google Cloud Platform. I also led the integration of SQL and NoSQL databases to support large volumes of information, improving the availability and consistency of critical data. Previously, I coordinated multidisciplinary teams in building the national energy model with the TIMES framework, developing analytical tools in Python that automated the processing of large datasets and streamlined the generation of strategic reports.
+    "
+
+sections:
+  - type: education
+    content:
+      - name: "Education"
+        entity:
+          - university: "National University of Colombia"
+            location: "Bogotá, Colombia"
+            dates: "February 2018 - December 2024"
+            degree: "Degree in *Mechanical Engineering*"
+            thesis_title: "Fluid-dynamic analysis of a propulsion mini-turbine"
+            supervisor: "Dr. Juan Miguel Mantilla"
+
+  - type: skills
+    content:
+      - name: "Skills"
+        entity:
+          - name: "Spoken Languages"
+            data: "English B2 (Professional), Spanish (Native)"
+          - name: "Programming Languages, Tools and Technologies"
+            data: "Python, JavaScript, Git, Linux, Google Cloud Platform (GCP), nest.js, Docker, Pytorch"
+          - name: "LLMs and AI Tools"
+            data: "Deep Learning, Machine Learning, Databases (SQL, NoSQL and vector), MCP, LlamaIndex, Ollama"
+          - name: "Engineering Tools and Technologies"
+            data: "TIMES Model, Autodesk Software, Microsoft Office, Ansys, OpenFoam"
+          - name: "Soft Skills"
+            data: "Teamwork, Leadership, Problem Solving, Communication, Adaptability"
+
+  - type: experience
+    content:
+      - name: "Professional Experience"
+        entity:
+          - organization: "SatEmis"
+            dates: "August 2025 - Present"
+            position: "Software Developer & AI Engineer"
+            responsibilities:
+              - "Develop the microservice architecture for the SatEmis platform using nest.js and Docker."
+              - "Design and implement AI algorithms for the processing and analysis of satellite data."
+              - "Optimize cloud computing resources on Google Cloud Platform (GCP) for efficient data handling and storage."
+              - "Effective communication with team members and stakeholders."
+              - "Develop a user-friendly interface for data visualization and interpretation."
+              - "Develop microservices for data ingestion, processing and analysis using FastAPI."
+              - "Architect and manage databases using SQL and NoSQL."
+
+          - organization: "National University of Colombia"
+            dates: "February 2024 - July 2025"
+            position: "Energy Systems Researcher and Analyst"
+            responsibilities:
+              - "Development of Colombia's national energy reference model using the TIMES VEDA framework (IEA-ETSAP)."
+              - "Collection and processing of Colombian energy system data by economic sectors and regions."
+              - "Processing of large datasets and development of analytical tools using Python."
+              - "Projection of energy transition scenarios aligned with national climate change plans."
+              - "Leadership and coordination of multidisciplinary teams."
+              - "Effective communication of technical results to non-technical audiences."
+
+          - organization: "National University of Colombia"
+            dates: "April 2022 - February 2024"
+            position: "Research Assistant - Faculty of Engineering"
+            responsibilities:
+              - "Support in developing the mitigation section of the Comprehensive Climate Change Plan (PIGCC) for power sector companies participating in the Carbon-Neutral Power Sector Alliance (ASECN)."
+              - "Quantification of Scope 1, 2 and 3 carbon footprints using the GHG Protocol methodology."
+              - "Development of statistical models to project emissions based on operational variables."
+              - "Assessment of mitigation measures such as energy efficiency, fuel switching, changes in the energy mix and carbon offsetting."
+              - "Statistical studies on the relationship between climate phenomena and power generation by source."
+              - "Preparation of presentations for stakeholder engagement and dissemination of results."
+
+      - name: "Teaching and Volunteering"
+        entity:
+          - organization: "National University of Colombia"
+            dates: "February 2023 - November 2023"
+            position: "Instructor"
+            supervisor: "M.Sc Luis Carlos Trujillo"
+            department: "Department of Human Sciences"
+            location: "Bogotá, Colombia"
+            responsibilities:
+              - "Teaching introductory programming with Python to students of the Faculty of Human Sciences."
+              - "Design of a teaching strategy adapted to non-engineering students."
+              - "Creation of educational presentations to improve knowledge transfer."
+              - "Introduction of basic Git concepts for collaborative project management."
+
+#  - type: newpage
+
+  - type: experience
+    content:
+      - name: "Certifications"
+        entity:
+          - organization: "Introduction to Numerical Analysis"
+            dates: "Graduated November 2020"
+            position: "Coursera"
+            certificate: "https://drive.google.com/file/d/1jTdB9KHhdZ72HzhHKaGwvHEhy1stSp0Q/view?usp=sharing"
+          - organization: "Process Engineering for the Energy Transition"
+            dates: "Graduated July 2023"
+            position: "National University of Colombia"
+            certificate: "https://drive.google.com/file/d/1C1yyJAA1Mp0S8c8LYSN18HA8erlOOZ_z/view?usp=sharing"
+          - organization: "MCP: Build Rich-Context AI Apps"
+            dates: "October 2025"
+            position: "DeepLearning.AI"
+            certificate: "https://learn.deeplearning.ai/accomplishments/ec70bf5a-587e-4179-bf0f-1fd46fb9d144?usp=sharing"
+          - organization: "Sustainable Supply Chain Management"
+            dates: "Graduated December 2025"
+            position: "MITx"
+            certificate: "https://courses.edx.org/certificates/20176b453ed94252877f18951f6afa63"
+          - organization: "Machine Learning with Python: from Linear Models to Deep Learning"
+            dates: "Graduated December 2025"
+            position: "MITx"
+            certificate: "https://courses.edx.org/certificates/c707c61237404b8fa6735f1a7bd99c73"
+
+
+  - type: publications
+    title: "Publications"
+    bibfile: publications.bib

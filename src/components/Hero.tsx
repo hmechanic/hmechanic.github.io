@@ -1,6 +1,6 @@
 import { lazy, Suspense, useState } from 'react';
 import { motion } from 'framer-motion';
-import { cvData } from '../utils/loadCv';
+import { useI18n } from '../i18n/LanguageContext';
 
 // Lazily loaded so the three.js bundle is split out of the main chunk.
 const HeroBackground = lazy(() => import('./3d/HeroBackground'));
@@ -17,8 +17,8 @@ const whenIdle = (cb: () => void) => {
 };
 
 const Hero = () => {
-    const { name } = cvData.heading;
-    const role = "Ingeniero Mecánico & Desarrollador de Software";
+    const { t, cv } = useI18n();
+    const { name } = cv.heading;
     // Mount the 3D background only AFTER the intro text animation has fully settled,
     // then wait for an idle slot. This keeps the WebGL warm-up hitch strictly out of
     // the text animation's tail, where it was being perceived as a stutter.
@@ -53,10 +53,10 @@ const Hero = () => {
                     onAnimationComplete={() => whenIdle(() => setShowBackground(true))}
                 >
                     <h2 className="text-neon-magenta font-mono text-lg mb-4 tracking-widest">
-                        PORTAFOLIO 2026
+                        {t.hero.badge}
                     </h2>
                     <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-                        Hola, soy <br />
+                        {t.hero.greeting} <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan to-neon-purple filter drop-shadow-[0_0_10px_rgba(0,243,255,0.5)]">
                             {name.split(' ')[0]}
                         </span>
@@ -65,18 +65,17 @@ const Hero = () => {
                         <div className="absolute -inset-1 bg-gradient-to-r from-neon-cyan to-neon-purple opacity-20 blur transition duration-1000 group-hover:opacity-40"></div>
                         <div className="relative bg-black/40 backdrop-blur-sm border-l-4 border-neon-cyan p-6 rounded-r-xl">
                             <p className="text-gray-300 text-lg leading-relaxed">
-                                {role}. Especializado en arquitecturas de microservicios, IA y análisis de datos. <br />
-                                Modelador energético, especializado transición energética y mitigación del cambio climático.
+                                {t.hero.tagline}
                             </p>
                         </div>
                     </div>
 
                     <div className="flex gap-4">
                         <a href="#projects" className="px-8 py-3 bg-neon-cyan/10 border border-neon-cyan text-neon-cyan hover:bg-neon-cyan hover:text-black transition-all font-bold tracking-wider rounded">
-                            VER PROYECTOS
+                            {t.hero.viewProjects}
                         </a>
                         <a href="#contact" className="px-8 py-3 border border-white/20 text-white hover:border-white transition-all font-bold tracking-wider rounded">
-                            CONTACTAR
+                            {t.hero.contact}
                         </a>
                     </div>
                 </motion.div>

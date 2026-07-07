@@ -1,9 +1,12 @@
 import { motion } from 'framer-motion';
-import { cvData } from '../utils/loadCv';
+import { useI18n } from '../i18n/LanguageContext';
 import { SkillCategory } from '../types';
 
 const Skills = () => {
-    const skillsData = (cvData.sections.find(s => s.type === 'skills')?.content?.find(c => c.name === "Habilidades")?.entity || []) as SkillCategory[];
+    const { t, cv } = useI18n();
+    // Match by section type (language-independent); the skills section has a
+    // single content group whose label differs per language.
+    const skillsData = (cv.sections.find(s => s.type === 'skills')?.content?.[0]?.entity || []) as SkillCategory[];
 
     return (
         <section className="py-20 px-6 bg-dark-bg relative overflow-hidden">
@@ -13,7 +16,7 @@ const Skills = () => {
 
             <div className="max-w-5xl mx-auto">
                 <h2 className="text-3xl font-bold text-center mb-16">
-                    <span className="text-neon-cyan">Stack</span> Tecnológico
+                    {t.skills.title}
                 </h2>
 
                 <div className="grid md:grid-cols-2 gap-8">

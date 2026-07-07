@@ -2,21 +2,22 @@
 import { motion } from 'framer-motion';
 import { ExternalLink, Folder } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
+import { useI18n } from '../i18n/LanguageContext';
 
 const Projects = () => {
-    // Hardcoded based on user prompt and typical portfolio needs
+    const { t } = useI18n();
+    // Project titles/tech/links are language-independent; descriptions come from
+    // the translation dictionary, keyed by title.
     const projects = [
         {
             title: "SatEmis Platform",
-            description: "Plataforma de procesamiento de datos satelitales. Arquitectura de microservicios con NestJS y Docker, optimizada para Google Cloud Platform.",
             tech: ["NestJS", "Docker", "GCP", "Python"],
-            github: "https://github.com/satemis/b-satemi", // Inferred from prompt
+            github: "https://github.com/satemis/b-satemi",
             external: "#",
             featured: true
         },
         {
             title: "Frontend SatEmis",
-            description: "Interfaz de usuario para la visualización e interpretación de datos satelitales y gestión de la plataforma.",
             tech: ["React", "TypeScript", "Vite"],
             github: "https://github.com/satemis/f-satemis",
             external: "#",
@@ -24,7 +25,6 @@ const Projects = () => {
         },
         {
             title: "Deep Learning Concepts",
-            description: "Implementación de modelos de Deep Learning y redes neuronales desde cero o utilizando frameworks modernos.",
             tech: ["Python", "PyTorch", "TensorFlow"],
             github: "https://github.com/hmechanic/deep-leaning.ai",
             external: "#",
@@ -41,8 +41,8 @@ const Projects = () => {
                     className="text-4xl font-bold mb-16 flex items-center justify-end"
                 >
                     <span className="mr-6 h-px bg-white/20 flex-grow max-w-xs"></span>
-                    Proyectos Destacados
-                    <span className="text-neon-green ml-4">03.</span>
+                    {t.projects.title}
+                    <span className="text-neon-green ml-4">{t.projects.number}</span>
                 </motion.h2>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -72,7 +72,7 @@ const Projects = () => {
 
                             <h3 className="text-xl font-bold text-white mb-3 group-hover:text-neon-green transition-colors">{project.title}</h3>
                             <p className="text-gray-400 text-sm mb-6 leading-relaxed">
-                                {project.description}
+                                {t.projects.descriptions[project.title]}
                             </p>
 
                             <div className="flex flex-wrap gap-3 mt-auto">

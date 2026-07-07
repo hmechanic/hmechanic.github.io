@@ -1,12 +1,13 @@
 import { motion } from 'framer-motion';
-import { cvData } from '../utils/loadCv';
+import { useI18n } from '../i18n/LanguageContext';
 import { ExperienceGroup } from '../types';
 
 const Experience = () => {
+    const { t, cv } = useI18n();
     // Gather every `experience` section and flatten their content groups so that
-    // Experiencia Profesional, Docencia y Voluntariado, and Certificaciones are
+    // Professional Experience, Teaching and Volunteering, and Certifications are
     // all rendered (matching by `type`, not by translatable label text).
-    const groups = cvData.sections
+    const groups = cv.sections
         .filter(s => s.type === 'experience')
         .flatMap(s => s.content ?? []) as ExperienceGroup[];
 
@@ -18,8 +19,8 @@ const Experience = () => {
                     whileInView={{ opacity: 1 }}
                     className="text-4xl font-bold mb-16 flex items-center"
                 >
-                    <span className="text-neon-cyan mr-4">02.</span>
-                    Experiencia
+                    <span className="text-neon-cyan mr-4">{t.experience.number}</span>
+                    {t.experience.title}
                     <span className="ml-6 h-px bg-white/20 flex-grow max-w-xs"></span>
                 </motion.h2>
 
@@ -67,7 +68,7 @@ const Experience = () => {
                                                     rel="noopener noreferrer"
                                                     className="inline-block mt-4 text-sm font-mono text-neon-cyan hover:text-white transition-colors"
                                                 >
-                                                    Ver certificado ↗
+                                                    {t.experience.viewCertificate}
                                                 </a>
                                             )}
                                         </div>
