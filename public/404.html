@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redireccionando...</title>
+  </head>
+  <body>
+    <script>
+      var appRoutes = ['/cv', '/cv/'];
+      if (appRoutes.indexOf(window.location.pathname) !== -1) {
+        sessionStorage.setItem('spa-redirect', window.location.pathname + window.location.search + window.location.hash);
+        window.location.replace('/');
+      }
+    </script>
+  </body>
+</html>

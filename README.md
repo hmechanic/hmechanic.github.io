@@ -63,6 +63,15 @@ pnpm run preview
 - `src/assets/`: contenido y recursos del portafolio.
 - `public/`: archivos estáticos servidos sin procesar.
 
+## CV en PDF
+
+La ruta `/cv` usa React Router y carga el PDF según el idioma activo del sitio. Ubica los archivos en:
+
+- `public/cv/cv-es.pdf`
+- `public/cv/cv-en.pdf`
+
+GitHub Pages no resuelve rutas SPA limpias al recargar directamente una URL como `/cv`. Por eso `public/404.html` redirige esa ruta al entry point y `index.html` la restaura antes de que React renderice.
+
 ## Deploy en GitHub Pages
 
 El repositorio incluye un workflow en `.github/workflows/deploy.yml`. Para activarlo en GitHub:

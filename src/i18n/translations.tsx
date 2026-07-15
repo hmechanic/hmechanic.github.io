@@ -8,10 +8,20 @@ export const LANGUAGES: Language[] = ['es', 'en'];
 export interface Translation {
     nav: {
         items: { id: string; label: string }[];
+        cv: string;
         home: string;
         openMenu: string;
         closeMenu: string;
         toggleLanguage: string;
+    };
+    cvPage: {
+        eyebrow: string;
+        title: string;
+        description: string;
+        openPdf: string;
+        fallback: string;
+        loading: string;
+        missingPdf: string;
     };
     hero: {
         badge: string;
@@ -59,10 +69,20 @@ export const translations: Record<Language, Translation> = {
                 { id: 'projects', label: 'Proyectos' },
                 { id: 'contact', label: 'Contacto' },
             ],
+            cv: 'Hoja de vida',
             home: 'Volver al inicio',
             openMenu: 'Abrir menú',
             closeMenu: 'Cerrar menú',
             toggleLanguage: 'Ver en inglés',
+        },
+        cvPage: {
+            eyebrow: 'Currículum',
+            title: 'CV profesional',
+            description: 'Este documento se actualiza automáticamente según el idioma seleccionado en el sitio.',
+            openPdf: 'Abrir PDF',
+            fallback: 'Si el visor no carga correctamente, abre el PDF en una nueva pestaña.',
+            loading: 'Cargando PDF...',
+            missingPdf: 'El PDF en español no está disponible todavía. Agrega el archivo public/cv/cv-es.pdf.',
         },
         hero: {
             badge: 'PORTAFOLIO 2026',
@@ -134,10 +154,20 @@ export const translations: Record<Language, Translation> = {
                 { id: 'projects', label: 'Projects' },
                 { id: 'contact', label: 'Contact' },
             ],
+            cv: 'RESUME',
             home: 'Back to top',
             openMenu: 'Open menu',
             closeMenu: 'Close menu',
             toggleLanguage: 'View in Spanish',
+        },
+        cvPage: {
+            eyebrow: 'Resume',
+            title: 'Professional CV',
+            description: 'This document updates automatically based on the selected site language.',
+            openPdf: 'Open PDF',
+            fallback: 'If the viewer does not load correctly, open the PDF in a new tab.',
+            loading: 'Loading PDF...',
+            missingPdf: 'The English PDF is not available yet. Add the public/cv/cv-en.pdf file.',
         },
         hero: {
             badge: 'PORTFOLIO 2026',
