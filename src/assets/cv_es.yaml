@@ -19,9 +19,33 @@ subheading:
 professional_profile:
     title: "Perfil Profesional"
     content: "
-    Soy ingeniero mecánico con más de tres años de experiencia en desarrollo de software y análisis de datos, especializado en la creación de soluciones basadas en Python y JavaScript que integran bases de datos SQL y servicios web. Mi trayectoria combina la modelación de sistemas energéticos con la implementación de arquitecturas de microservicios, lo que me permite diseñar y desarrollar aplicaciones que cumplen con los estándares de calidad y facilitan la toma de decisiones basada en datos. 
-    
-    En mi rol actual en SatEmis, diseñé y desplegué la arquitectura de microservicios utilizando nest.js, Docker y FastAPI, optimizando la ingestión y el procesamiento de datos satelitales y garantizando una gestión eficiente en Google Cloud Platform. Además, lideré la integración de bases de datos SQL y NoSQL para soportar grandes volúmenes de información, mejorando la disponibilidad y la consistencia de los datos críticos. Previamente, coordiné equipos multidisciplinarios en la construcción del modelo energético nacional con el framework TIMES, desarrollando herramientas analíticas en Python que automatizaron el tratamiento de conjuntos de datos extensos y facilitaron la generación de reportes estratégicos.
+    Soy ingeniero mecánico y he orientado mi carrera profesional hacia dos áreas principales.
+
+    La primera es la participación activa en investigación aplicada, especialmente en temas 
+    relacionados con energía, cambio climático, análisis de datos y modelación de sistemas. 
+    La segunda es el desarrollo de software complejo para resolver problemas de ingeniería y 
+    construir productos tecnológicos. En esta área implemento tecnologías relacionadas con 
+    el análisis y la gestión de datos, el desarrollo de software y la creación de proyectos 
+    *AI First*, incluyendo programación de agentes, diseño de arquitecturas de machine learning, 
+    automatización de procesos e integración de sistemas.
+
+    Mi formación complementaria incluye inteligencia artificial, machine learning, análisis 
+    de datos e ingeniería de software. Entre mis trabajos recientes se encuentran dos proyectos 
+    principales: SatEmis, una plataforma orientada a la investigación climática, el análisis de 
+    datos satelitales y la aplicación de modelos de machine learning a escala; y OrionAtiende.com, 
+    un SaaS para la implementación personalizada de agentes especializados en ventas y soporte al 
+    cliente, dirigido a empresas con necesidades intensivas de atención y gestión de usuarios. 
+    Ambos proyectos pueden explorarse con mayor detalle en la sección de proyectos.
+
+    Como profesional, también presto servicios de consultoría en ingeniería mecánica, con énfasis 
+    en las áreas térmica y de fluidos. Mi trabajo incluye energías renovables, modelación 
+    energética, dinámica de fluidos computacional —CFD—, mitigación del cambio climático, 
+    elaboración de inventarios de emisiones y monitoreo remoto.
+
+    En el área de software, trabajo como ingeniero líder en el diseño y desarrollo de proyectos. 
+    Cuento con cerca de cuatro años de experiencia certificada y me especializo en la construcción 
+    de soluciones que integran datos, inteligencia artificial, software e ingeniería aplicada.
+
     "
 
 sections:

@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from './Navbar';
+import SectionProgress from './SectionProgress';
 import { useI18n } from '../i18n/LanguageContext';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
@@ -7,6 +8,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
     return (
         <div className="min-h-screen bg-dark-bg text-white selection:bg-neon-cyan selection:text-black">
             <Navbar />
+            <SectionProgress />
             <main className="relative z-10">
                 {children}
             </main>

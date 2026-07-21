@@ -3,9 +3,12 @@ import { motion } from 'framer-motion';
 import { ExternalLink, Folder } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
 import { useI18n } from '../i18n/LanguageContext';
+import { useReveal } from './Reveal';
 
 const Projects = () => {
     const { t } = useI18n();
+    // The Projects heading is right-aligned, so it drifts in from the right.
+    const headingReveal = useReveal(0, 'right');
     // Project titles/tech/links are language-independent; descriptions come from
     // the translation dictionary, keyed by title.
     const projects = [
@@ -36,8 +39,7 @@ const Projects = () => {
         <section id="projects" className="py-20 px-6 bg-dark-bg">
             <div className="max-w-6xl mx-auto">
                 <motion.h2
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
+                    {...headingReveal}
                     className="text-3xl sm:text-4xl font-bold mb-16 flex items-center justify-end"
                 >
                     <span className="mr-6 h-px bg-white/20 flex-grow max-w-xs"></span>

@@ -1,23 +1,25 @@
 import { motion } from 'framer-motion';
 import { useI18n } from '../i18n/LanguageContext';
+import { useReveal } from './Reveal';
 import { SkillCategory } from '../types';
 
 const Skills = () => {
     const { t, cv } = useI18n();
+    const headingReveal = useReveal();
     // Match by section type (language-independent); the skills section has a
     // single content group whose label differs per language.
     const skillsData = (cv.sections.find(s => s.type === 'skills')?.content?.[0]?.entity || []) as SkillCategory[];
 
     return (
-        <section className="py-20 px-6 bg-dark-bg relative overflow-hidden">
+        <section id="skills" className="py-20 px-6 bg-dark-bg relative overflow-hidden">
             {/* Background decorative elements */}
             <div aria-hidden="true" className="absolute top-0 right-0 w-96 h-96 bg-neon-purple/10 rounded-full blur-3xl -z-10"></div>
             <div aria-hidden="true" className="absolute bottom-0 left-0 w-64 h-64 bg-neon-cyan/10 rounded-full blur-3xl -z-10"></div>
 
             <div className="max-w-5xl mx-auto">
-                <h2 className="text-3xl font-bold text-center mb-16">
+                <motion.h2 {...headingReveal} className="text-3xl font-bold text-center mb-16">
                     {t.skills.title}
-                </h2>
+                </motion.h2>
 
                 <div className="grid md:grid-cols-2 gap-8">
                     {skillsData.map((category, index) => (

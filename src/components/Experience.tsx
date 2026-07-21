@@ -1,9 +1,11 @@
 import { motion } from 'framer-motion';
 import { useI18n } from '../i18n/LanguageContext';
+import { useReveal } from './Reveal';
 import { ExperienceGroup } from '../types';
 
 const Experience = () => {
     const { t, cv } = useI18n();
+    const headingReveal = useReveal();
     // Gather every `experience` section and flatten their content groups so that
     // Professional Experience, Teaching and Volunteering, and Certifications are
     // all rendered (matching by `type`, not by translatable label text).
@@ -15,8 +17,7 @@ const Experience = () => {
         <section id="experience" className="py-20 px-6 bg-dark-surface relative">
             <div className="max-w-4xl mx-auto">
                 <motion.h2
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
+                    {...headingReveal}
                     className="text-3xl sm:text-4xl font-bold mb-16 flex items-center"
                 >
                     <span className="text-neon-cyan mr-4">{t.experience.number}</span>

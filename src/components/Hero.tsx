@@ -47,27 +47,27 @@ const Hero = () => {
             {/* Text Content */}
             <div className="relative z-10 w-full md:w-3/5 flex flex-col justify-center items-start px-6 sm:px-8 md:pl-20">
                 <motion.div
-                    className="w-full max-w-lg"
+                    className="w-full max-w-lg lg:max-w-xl"
                     initial={{ opacity: 0, x: -50 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8 }}
                     onAnimationComplete={() => whenIdle(() => setShowBackground(true))}
                 >
-                    <h2 className="text-neon-magenta font-mono text-sm sm:text-lg mb-3 sm:mb-4 tracking-widest">
-                        {t.hero.badge}
-                    </h2>
                     <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-4 sm:mb-6 leading-tight">
-                        {t.hero.greeting} <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan to-neon-purple filter drop-shadow-[0_0_10px_rgba(0,243,255,0.5)]">
-                            {name.split(' ')[0]}
+                        {t.hero.greeting}{' '}
+                        <span className="whitespace-nowrap">
+                            {t.hero.namePrefix}{' '}
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan to-neon-purple filter drop-shadow-[0_0_10px_rgba(0,243,255,0.5)]">
+                                {name.split(' ')[0]}
+                            </span>
                         </span>
                     </h1>
                     <div className="relative mb-6 sm:mb-8 w-full group">
                         <div className="absolute -inset-1 bg-gradient-to-r from-neon-cyan to-neon-purple opacity-20 blur transition duration-1000 group-hover:opacity-40"></div>
-                        <div className="relative bg-black/40 backdrop-blur-sm border-l-4 border-neon-cyan p-4 sm:p-6 rounded-r-xl">
-                            <p className="text-gray-300 text-sm sm:text-lg leading-relaxed">
+                        <div className="relative bg-black/60 backdrop-blur-md border-l-4 border-neon-cyan p-5 sm:p-6 rounded-r-xl shadow-[0_0_24px_rgba(0,243,255,0.12)]">
+                            <div className="text-gray-200 text-sm sm:text-base leading-7 sm:leading-8 text-pretty space-y-4">
                                 {t.hero.tagline}
-                            </p>
+                            </div>
                         </div>
                     </div>
 

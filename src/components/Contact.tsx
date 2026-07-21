@@ -1,19 +1,18 @@
 import { motion } from 'framer-motion';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
 import { useI18n } from '../i18n/LanguageContext';
+import { useReveal } from './Reveal';
 
 const Contact = () => {
     const { t } = useI18n();
+    const reveal = useReveal();
     const phoneNumber = "573227325656";
     const message = encodeURIComponent(t.contact.whatsappMessage);
 
     return (
         <section id="contact" className="py-24 px-6 text-center relative">
             <div className="max-w-2xl mx-auto">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                >
+                <motion.div {...reveal}>
                     <p className="text-neon-cyan font-mono mb-4">{t.contact.eyebrow}</p>
                     <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">{t.contact.title}</h2>
                     <p className="text-gray-400 text-lg mb-12">
