@@ -16,6 +16,16 @@ body {
   overflow-x: hidden;
 }
 
+/* The document opts into `viewport-fit=cover`, so honour the device safe areas
+   (notch / rounded corners) on landscape phones. Insets are 0 in portrait, so
+   this is a no-op there and only pads content away from a physical cutout. */
+@supports (padding: max(0px)) {
+  body {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+}
+
 @layer utilities {
   .text-neon-cyan {
     color: #00f3ff;
