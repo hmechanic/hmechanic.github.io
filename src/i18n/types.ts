@@ -53,7 +53,6 @@ export interface Translation {
     stats: { value: string; label: string }[];
   };
   experience: {
-    number: string;
     title: string;
     viewCertificate: string;
   };
@@ -61,7 +60,6 @@ export interface Translation {
     title: ReactNode;
   };
   projects: {
-    number: string;
     title: string;
     /** Descriptions keyed by the (language-independent) project title. */
     descriptions: Record<string, string>;

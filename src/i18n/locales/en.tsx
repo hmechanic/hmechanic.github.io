@@ -141,7 +141,6 @@ export const en: Translation = {
     ],
   },
   experience: {
-    number: '03.',
     title: 'Experience',
     viewCertificate: 'View certificate ↗',
   },
@@ -153,7 +152,6 @@ export const en: Translation = {
     ),
   },
   projects: {
-    number: '02.',
     title: 'Featured Projects',
     descriptions: {
       'SatEmis Platform':

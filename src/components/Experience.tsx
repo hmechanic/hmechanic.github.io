@@ -20,7 +20,6 @@ const Experience = () => {
           {...headingReveal}
           className="text-3xl sm:text-4xl font-bold mb-16 flex items-center"
         >
-          <span className="text-neon-cyan mr-4">{t.experience.number}</span>
           {t.experience.title}
           <span className="ml-6 h-px bg-white/20 flex-grow max-w-xs"></span>
         </motion.h2>

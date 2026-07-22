@@ -43,7 +43,6 @@ const Projects = () => {
         >
           <span className="mr-6 h-px bg-white/20 flex-grow max-w-xs"></span>
           {t.projects.title}
-          <span className="text-neon-green ml-4">{t.projects.number}</span>
         </motion.h2>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-6">
