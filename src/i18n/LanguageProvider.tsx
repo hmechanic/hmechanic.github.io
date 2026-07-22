@@ -1,22 +1,11 @@
-import { createContext, useContext, useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import type { ReactNode } from 'react';
-import { LANGUAGES, translations, type Language, type Translation } from './translations';
-import { cvByLang } from '../utils/loadCv';
-import type { CvData } from '../types';
-
-interface I18nContextValue {
-  lang: Language;
-  setLang: (lang: Language) => void;
-  toggleLang: () => void;
-  /** UI strings for the active language. */
-  t: Translation;
-  /** Parsed CV data for the active language. */
-  cv: CvData;
-}
+import { LANGUAGES, type Language } from './types';
+import { translations } from './locales';
+import { I18nContext, type I18nContextValue } from './context';
+import { cvByLang } from '@/utils/loadCv';
 
 const STORAGE_KEY = 'lang';
-
-const I18nContext = createContext<I18nContextValue | null>(null);
 
 const isLanguage = (value: string | null): value is Language =>
   value != null && (LANGUAGES as string[]).includes(value);
@@ -49,11 +38,4 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   );
 
   return <I18nContext.Provider value={value}>{children}</I18nContext.Provider>;
-};
-
-// eslint-disable-next-line react-refresh/only-export-components
-export const useI18n = (): I18nContextValue => {
-  const ctx = useContext(I18nContext);
-  if (!ctx) throw new Error('useI18n must be used within a LanguageProvider');
-  return ctx;
 };

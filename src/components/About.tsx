@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from 'framer-motion';
-import { useI18n } from '../i18n/LanguageContext';
+import { useI18n } from '@/hooks/useI18n';
 
 const statAccents = ['text-neon-cyan', 'text-neon-magenta', 'text-neon-green'];
 const statBars = [

@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { ExternalLink, Folder } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
-import { useI18n } from '../i18n/LanguageContext';
+import { useI18n } from '@/hooks/useI18n';
 import { useReveal } from './Reveal';
 
 const Projects = () => {
@@ -46,14 +46,14 @@ const Projects = () => {
           <span className="text-neon-green ml-4">{t.projects.number}</span>
         </motion.h2>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-6">
           {[0, 1].map((index) => (
             <motion.div
               key={`flagship-project-${index}`}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
-              className="min-h-72 bg-dark-surface border border-white/5 rounded-xl p-8 hover:-translate-y-2 hover:border-neon-green/50 transition-all duration-300"
+              className={`${index === 0 ? 'lg:col-start-2' : ''} min-h-72 lg:col-span-2 bg-dark-surface border border-white/5 rounded-xl p-8 hover:-translate-y-2 hover:border-neon-green/50 transition-all duration-300`}
               aria-hidden="true"
             />
           ))}
@@ -63,7 +63,7 @@ const Projects = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: (index + 2) * 0.1 }}
-              className="bg-dark-surface border border-white/5 rounded-xl p-8 hover:-translate-y-2 hover:border-neon-green/50 transition-all duration-300 group"
+              className="lg:col-span-2 bg-dark-surface border border-white/5 rounded-xl p-8 hover:-translate-y-2 hover:border-neon-green/50 transition-all duration-300 group"
             >
               <div className="flex justify-between items-center mb-6">
                 <Folder size={40} className="text-neon-cyan" />

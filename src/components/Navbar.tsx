@@ -3,7 +3,7 @@ import { Menu, X, Mail } from 'lucide-react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { motion, useReducedMotion } from 'framer-motion';
 import { Link, useLocation } from 'react-router';
-import { useI18n } from '../i18n/LanguageContext';
+import { useI18n } from '@/hooks/useI18n';
 
 const LanguageToggle = ({ className = '' }: { className?: string }) => {
   const { t, lang, toggleLang } = useI18n();

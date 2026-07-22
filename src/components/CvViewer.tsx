@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
-import { useI18n } from '../i18n/LanguageContext';
+import { useI18n } from '@/hooks/useI18n';
 
 type PdfStatus = 'loading' | 'available' | 'missing';
 type PdfCheck = {

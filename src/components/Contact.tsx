@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
-import { useI18n } from '../i18n/LanguageContext';
+import { useI18n } from '@/hooks/useI18n';
 import { useReveal } from './Reveal';
 
 const Contact = () => {

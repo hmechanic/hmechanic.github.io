@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from './Navbar';
 import SectionProgress from './SectionProgress';
-import { useI18n } from '../i18n/LanguageContext';
+import { useI18n } from '@/hooks/useI18n';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const { t } = useI18n();

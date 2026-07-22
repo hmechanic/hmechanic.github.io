@@ -3,7 +3,7 @@ import cvEsRaw from '../assets/cv_es.yaml?raw';
 import cvEnRaw from '../assets/cv_en.yaml?raw';
 
 import { CvData } from '../types';
-import type { Language } from '../i18n/translations';
+import type { Language } from '@/i18n/types';
 
 // One parsed CV per supported language. Components pick the right one based on
 // the active language from the i18n context.
