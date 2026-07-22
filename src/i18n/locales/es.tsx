@@ -1,4 +1,4 @@
-import type { Translation } from '../types';
+import type { Translation } from '@/i18n/types';
 
 export const es: Translation = {
   nav: {
