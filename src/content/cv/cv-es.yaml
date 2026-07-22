@@ -21,29 +21,29 @@ professional_profile:
     content: "
     Soy ingeniero mecánico y he orientado mi carrera profesional hacia dos áreas principales.
 
-    La primera es la participación activa en investigación aplicada, especialmente en temas 
-    relacionados con energía, cambio climático, análisis de datos y modelación de sistemas. 
-    La segunda es el desarrollo de software complejo para resolver problemas de ingeniería y 
-    construir productos tecnológicos. En esta área implemento tecnologías relacionadas con 
-    el análisis y la gestión de datos, el desarrollo de software y la creación de proyectos 
-    *AI First*, incluyendo programación de agentes, diseño de arquitecturas de machine learning, 
+    La primera es la participación activa en investigación aplicada, especialmente en temas
+    relacionados con energía, cambio climático, análisis de datos y modelación de sistemas.
+    La segunda es el desarrollo de software complejo para resolver problemas de ingeniería y
+    construir productos tecnológicos. En esta área implemento tecnologías relacionadas con
+    el análisis y la gestión de datos, el desarrollo de software y la creación de proyectos
+    *AI First*, incluyendo programación de agentes, diseño de arquitecturas de machine learning,
     automatización de procesos e integración de sistemas.
 
-    Mi formación complementaria incluye inteligencia artificial, machine learning, análisis 
-    de datos e ingeniería de software. Entre mis trabajos recientes se encuentran dos proyectos 
-    principales: SatEmis, una plataforma orientada a la investigación climática, el análisis de 
-    datos satelitales y la aplicación de modelos de machine learning a escala; y OrionAtiende.com, 
-    un SaaS para la implementación personalizada de agentes especializados en ventas y soporte al 
-    cliente, dirigido a empresas con necesidades intensivas de atención y gestión de usuarios. 
+    Mi formación complementaria incluye inteligencia artificial, machine learning, análisis
+    de datos e ingeniería de software. Entre mis trabajos recientes se encuentran dos proyectos
+    principales: SatEmis, una plataforma orientada a la investigación climática, el análisis de
+    datos satelitales y la aplicación de modelos de machine learning a escala; y OrionAtiende.com,
+    un SaaS para la implementación personalizada de agentes especializados en ventas y soporte al
+    cliente, dirigido a empresas con necesidades intensivas de atención y gestión de usuarios.
     Ambos proyectos pueden explorarse con mayor detalle en la sección de proyectos.
 
-    Como profesional, también presto servicios de consultoría en ingeniería mecánica, con énfasis 
-    en las áreas térmica y de fluidos. Mi trabajo incluye energías renovables, modelación 
-    energética, dinámica de fluidos computacional —CFD—, mitigación del cambio climático, 
+    Como profesional, también presto servicios de consultoría en ingeniería mecánica, con énfasis
+    en las áreas térmica y de fluidos. Mi trabajo incluye energías renovables, modelación
+    energética, dinámica de fluidos computacional —CFD—, mitigación del cambio climático,
     elaboración de inventarios de emisiones y monitoreo remoto.
 
-    En el área de software, trabajo como ingeniero líder en el diseño y desarrollo de proyectos. 
-    Cuento con cerca de cuatro años de experiencia certificada y me especializo en la construcción 
+    En el área de software, trabajo como ingeniero líder en el diseño y desarrollo de proyectos.
+    Cuento con cerca de cuatro años de experiencia certificada y me especializo en la construcción
     de soluciones que integran datos, inteligencia artificial, software e ingeniería aplicada.
 
     "
@@ -51,7 +51,7 @@ professional_profile:
 sections:
   - type: education
     content:
-      - name: "Educación"  
+      - name: "Educación"
         entity:
           - university: "Universidad nacional de Colombia"
             location: "Bogotá, Colombia"
@@ -79,18 +79,29 @@ sections:
     content:
       - name: "Experiencia Profesional"
         entity:
-          - organization: "SatEmis"
-            dates: "Agosto 2025 - Presente"
-            position: "Desarrollador de Software e Ingeniero de IA"
+          - organization: "Orion AI"
+            dates: "Marzo de 2026 - Presente"
+            position: "Creador y Líder Técnico"
             responsibilities:
-              - "Desarrollar la arquitectura de microservicios para la plataforma SatEmis utilizando nest.js y Docker."
-              - "Diseñar e implementar algoritmos de IA para el procesamiento y análisis de datos satelitales."
-              - "Optimizar los recursos de computación en la nube en Google Cloud Platform (GCP) para el manejo y almacenamiento eficiente de datos."
-              - "Comunicación efectiva con miembros del equipo y partes interesadas."
-              - "Desarrollar una interfaz amigable para la visualización e interpretación de datos."
-              - "Desarrollar microservicios para la ingesta, procesamiento y análisis de datos utilizando FastAPI."
-              - "Arquitectura y gestión de bases de datos utilizando SQL y NoSQL."
-              
+              - "Lideré desde cero el diseño, desarrollo y evolución de Orion AI, una plataforma SaaS multiempresa que integra CRM, agentes conversacionales y automatización de ventas y soporte por WhatsApp."
+              - "Diseñé una arquitectura full-stack con Next.js, React, TypeScript, FastAPI y PostgreSQL, aplicando procesamiento asíncrono, aislamiento por empresa y patrones server-first."
+              - "Implementé agentes con LangGraph, memoria conversacional persistente y herramientas para consultar conocimiento, actualizar el embudo comercial y transferir conversaciones a asesores humanos."
+              - "Construí un sistema RAG con Qdrant para indexar PDF, Markdown y TXT, con embeddings configurables, búsqueda semántica aislada por agente y workers durables con reintentos."
+              - "Integré Chatwoot, WhatsApp Cloud y Notion para gestionar canales, webhooks, notas de voz, Agent Bots y sincronización bidireccional de leads."
+              - "Desarrollé el CRM y su analítica operacional, incluyendo seguimiento de leads, roles y permisos, estados de pago, métricas de conversión y gestión de bases de conocimiento."
+              - "Definí la seguridad, observabilidad y operación del producto mediante JWT, RBAC, cifrado de credenciales, rate limiting, métricas Prometheus, pruebas automatizadas, Docker y despliegues en Railway y VPS."
+
+          - organization: "SatEmis"
+            dates: "Agosto de 2025 - Presente"
+            position: "Ingeniero de Software e Inteligencia Artificial"
+            responsibilities:
+              - "Diseñé e implementé una arquitectura distribuida con NestJS, FastAPI, Docker y PostgreSQL/PostGIS para gestionar inventarios de emisiones y procesamiento geoespacial."
+              - "Desarrollé un servicio de datos satelitales con Google Earth Engine y Sentinel-5P para consultar, agregar y analizar concentraciones de metano por departamento en Colombia."
+              - "Construí APIs para la ingesta, procesamiento y consulta de inventarios climáticos y datos geoespaciales."
+              - "Desarrollé una aplicación web con React y TypeScript que integra autenticación, mapas interactivos, visualización de emisiones e internacionalización."
+              - "Integré capacidades de inteligencia artificial para consultar y contextualizar normativa climática, facilitando la interpretación de información ambiental."
+              - "Contenericé y optimicé los servicios en Google Cloud Platform (GCP) para mejorar el uso de recursos de procesamiento y almacenamiento."
+
           - organization: "Universidad nacional de Colombia"
             dates: "Febrero de 2024 - Julio de 2025"
             position: "Investigador y analista de sistemas energéticos"
@@ -101,7 +112,7 @@ sections:
               - "Proyección de escenarios de transición energética alineados con los planes nacionales de cambio climático."
               - "Liderazgo y coordinación de equipos multidiciplinarios."
               - "Comunicación efectiva de resultados técnicos a audiencias no técnicas."
-              
+
           - organization: "Universidad nacional de Colombia"
             dates: "Abril de 2022 - Febrero de 2024"
             position: "Asistente de Investigación - Facultad de Ingeniería"
@@ -126,7 +137,7 @@ sections:
               - "Diseño de una estrategia de enseñanza adaptada a estudiantes no ingenieros."
               - "Creación de presentaciones educativas para mejorar la transferencia de conocimientos."
               - "Introducción de conceptos básicos de Git para la gestión colaborativa de proyectos."
-          
+
 #  - type: newpage
 
   - type: experience
@@ -153,7 +164,7 @@ sections:
             dates: "Graduated December 2025"
             position: "MITx"
             certificate: "https://courses.edx.org/certificates/c707c61237404b8fa6735f1a7bd99c73"
-  
+
 
   - type: publications
     title: "Publicaciones"

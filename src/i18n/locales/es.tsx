@@ -46,7 +46,7 @@ export const es: Translation = {
         </p>
         <p>
           Utilizo tecnología, creatividad, mis capacidades análiticas y la forma apasionada de
-          enfrentarme a los retos para aportar a crear y mantener un mundo con valores y sueños y
+          enfrentarme a los retos para aportar a crear y mantener un mundo con valores, sueños y
           conciencia.
         </p>
         <p>
@@ -159,6 +159,13 @@ export const es: Translation = {
   projects: {
     title: 'Proyectos Destacados',
     descriptions: {
+      'Orion Atiende': 'Plataforma de operación comercial, leads y automatización.',
+      SatEmis:
+        'Plataforma de inteligencia climática para visualizar concentraciones satelitales de metano y apoyar la gestión de emisiones.',
+      Creasinhumo:
+        'Es un proyecto personal donde comparto mis experiencias y aprendizajes tratando de aportar contenido de valor a mi red, la filosofia es de enseñanza a los demas al tiempo que aprendo',
+      'cv-tool':
+        'Herramienta para la generación automática de currículums profesionales en formato PDF. Facilita la vida aplicando a diferentes ofertas laborales',
       'SatEmis Platform':
         'Plataforma de procesamiento de datos satelitales. Arquitectura de microservicios con NestJS y Docker, optimizada para Google Cloud Platform.',
       'Frontend SatEmis':

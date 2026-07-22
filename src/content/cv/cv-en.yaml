@@ -55,17 +55,28 @@ sections:
     content:
       - name: "Professional Experience"
         entity:
+          - organization: "Orion AI"
+            dates: "March 2026 - Present"
+            position: "Creator and Technical Lead"
+            responsibilities:
+              - "Led the design, development, and evolution of Orion AI from the ground up, building a multi-tenant SaaS platform that combines CRM, conversational agents, and WhatsApp sales and support automation."
+              - "Designed a full-stack architecture with Next.js, React, TypeScript, FastAPI, and PostgreSQL, applying asynchronous processing, tenant isolation, and server-first patterns."
+              - "Implemented LangGraph agents with persistent conversational memory and tools for knowledge retrieval, sales funnel updates, and human handoff."
+              - "Built a Qdrant-based RAG system for indexing PDF, Markdown, and TXT documents, with configurable embeddings, agent-isolated semantic search, and durable retryable workers."
+              - "Integrated Chatwoot, WhatsApp Cloud, and Notion to manage channels, webhooks, voice notes, Agent Bots, and bidirectional lead synchronization."
+              - "Developed the CRM and its operational analytics, including lead tracking, roles and permissions, payment statuses, conversion metrics, and knowledge base management."
+              - "Established product security, observability, and operations through JWT, RBAC, credential encryption, rate limiting, Prometheus metrics, automated testing, Docker, and Railway deployments."
+
           - organization: "SatEmis"
             dates: "August 2025 - Present"
-            position: "Software Developer & AI Engineer"
+            position: "Software and Artificial Intelligence Engineer"
             responsibilities:
-              - "Develop the microservice architecture for the SatEmis platform using nest.js and Docker."
-              - "Design and implement AI algorithms for the processing and analysis of satellite data."
-              - "Optimize cloud computing resources on Google Cloud Platform (GCP) for efficient data handling and storage."
-              - "Effective communication with team members and stakeholders."
-              - "Develop a user-friendly interface for data visualization and interpretation."
-              - "Develop microservices for data ingestion, processing and analysis using FastAPI."
-              - "Architect and manage databases using SQL and NoSQL."
+              - "Designed and implemented a distributed architecture with NestJS, FastAPI, Docker, and PostgreSQL/PostGIS to manage emissions inventories and geospatial processing."
+              - "Developed a satellite data service with Google Earth Engine and Sentinel-5P to query, aggregate, and analyze methane concentrations by department in Colombia."
+              - "Built APIs for the ingestion, processing, and retrieval of climate inventories and geospatial data."
+              - "Developed a React and TypeScript web application integrating authentication, interactive maps, emissions visualization, and internationalization."
+              - "Integrated artificial intelligence capabilities to retrieve and contextualize climate regulations, facilitating the interpretation of environmental information."
+              - "Containerized and optimized services on Google Cloud Platform (GCP) to improve processing and storage resource utilization."
 
           - organization: "National University of Colombia"
             dates: "February 2024 - July 2025"

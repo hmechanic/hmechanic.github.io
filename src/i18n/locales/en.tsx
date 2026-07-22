@@ -154,6 +154,13 @@ export const en: Translation = {
   projects: {
     title: 'Featured Projects',
     descriptions: {
+      'Orion Atiende': 'Commercial operations, leads, and automation platform.',
+      SatEmis:
+        'Climate intelligence platform for visualizing satellite methane concentrations and supporting emissions management.',
+      Creasinhumo:
+        'It is a personal project where I share my experiences and learnings, trying to contribute valuable content to my network; the philosophy is to teach others while I learn.',
+      'cv-tool':
+        'Tool for automatically generating professional resumes in PDF format. Makes applying to different job opportunities easier.',
       'SatEmis Platform':
         'Satellite data processing platform. Microservice architecture with NestJS and Docker, optimized for Google Cloud Platform.',
       'Frontend SatEmis':
