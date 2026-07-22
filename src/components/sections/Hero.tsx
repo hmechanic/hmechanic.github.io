@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { useI18n } from '@/hooks/useI18n';
 
 // Lazily loaded so the three.js bundle is split out of the main chunk.
-const HeroBackground = lazy(() => import('./3d/HeroBackground'));
+const HeroBackground = lazy(() => import('@/components/three/HeroBackground'));
 
 // Schedule heavy work (three.js parse + shader compile + texture upload) for a
 // moment when the browser is idle. The synchronous WebGL warm-up is unavoidable,

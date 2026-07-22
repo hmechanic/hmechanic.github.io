@@ -1,13 +1,12 @@
-import type { ComponentProps, ReactNode } from 'react';
-import { motion, useReducedMotion } from 'framer-motion';
+import { useReducedMotion } from 'framer-motion';
 
 // A soft, refined easing curve (ease-out-quint-ish) shared across section reveals
 // so every entrance in the site feels like one coherent motion language.
 const EASE = [0.22, 1, 0.36, 1] as const;
 
-type Direction = 'up' | 'left' | 'right' | 'none';
+export type RevealDirection = 'up' | 'left' | 'right' | 'none';
 
-const offsetFor = (direction: Direction) => {
+const offsetFor = (direction: RevealDirection) => {
   switch (direction) {
     case 'left':
       return { x: -24, y: 0 };
@@ -25,7 +24,7 @@ const offsetFor = (direction: Direction) => {
  * a gentle rise + fade + de-blur as the element scrolls into view. Honors
  * `prefers-reduced-motion` by collapsing to a plain, instant appearance.
  */
-export const useReveal = (delay = 0, direction: Direction = 'up') => {
+export const useReveal = (delay = 0, direction: RevealDirection = 'up') => {
   const shouldReduceMotion = useReducedMotion();
   if (shouldReduceMotion) {
     return {
@@ -44,21 +43,3 @@ export const useReveal = (delay = 0, direction: Direction = 'up') => {
     transition: { duration: 0.6, ease: EASE, delay },
   };
 };
-
-type RevealProps = ComponentProps<typeof motion.div> & {
-  children: ReactNode;
-  delay?: number;
-  direction?: Direction;
-};
-
-/** Convenience wrapper: <Reveal>…</Reveal> applies the shared entrance. */
-const Reveal = ({ children, delay = 0, direction = 'up', ...rest }: RevealProps) => {
-  const reveal = useReveal(delay, direction);
-  return (
-    <motion.div {...reveal} {...rest}>
-      {children}
-    </motion.div>
-  );
-};
-
-export default Reveal;

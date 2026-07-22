@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useI18n } from '@/hooks/useI18n';
-import { useReveal } from './Reveal';
+import { useReveal } from '@/hooks/useReveal';
 import { ExperienceGroup } from '@/types/cv';
 
 const Experience = () => {

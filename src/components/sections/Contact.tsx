@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
 import { useI18n } from '@/hooks/useI18n';
-import { useReveal } from './Reveal';
+import { useReveal } from '@/hooks/useReveal';
 
 const Contact = () => {
   const { t } = useI18n();

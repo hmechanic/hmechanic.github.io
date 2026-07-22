@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { ExternalLink, Folder } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
 import { useI18n } from '@/hooks/useI18n';
-import { useReveal } from './Reveal';
+import { useReveal } from '@/hooks/useReveal';
 
 const Projects = () => {
   const { t } = useI18n();
