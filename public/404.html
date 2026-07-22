@@ -9,7 +9,10 @@
     <script>
       var appRoutes = ['/cv', '/cv/'];
       if (appRoutes.indexOf(window.location.pathname) !== -1) {
-        sessionStorage.setItem('spa-redirect', window.location.pathname + window.location.search + window.location.hash);
+        sessionStorage.setItem(
+          'spa-redirect',
+          window.location.pathname + window.location.search + window.location.hash,
+        );
         window.location.replace('/');
       }
     </script>
