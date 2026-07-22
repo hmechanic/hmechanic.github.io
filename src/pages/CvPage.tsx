@@ -9,7 +9,7 @@ type PdfCheck = {
   status: PdfStatus;
 };
 
-const CvViewer = () => {
+const CvPage = () => {
   const { lang, t } = useI18n();
   const pdfUrl = `/cv/cv-${lang}.pdf`;
   const [pdfCheck, setPdfCheck] = useState<PdfCheck>({ url: pdfUrl, status: 'loading' });
@@ -115,4 +115,4 @@ const CvViewer = () => {
   );
 };
 
-export default CvViewer;
+export default CvPage;

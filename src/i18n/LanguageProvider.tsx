@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 import { LANGUAGES, type Language } from './types';
 import { translations } from './locales';
 import { I18nContext, type I18nContextValue } from './context';
-import { cvByLang } from '@/utils/loadCv';
+import { cvByLang } from '@/lib/cv';
 
 const STORAGE_KEY = 'lang';
 

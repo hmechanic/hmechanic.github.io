@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useI18n } from '@/hooks/useI18n';
 import { useReveal } from './Reveal';
-import { SkillCategory } from '../types';
+import { SkillCategory } from '@/types/cv';
 
 const Skills = () => {
   const { t, cv } = useI18n();

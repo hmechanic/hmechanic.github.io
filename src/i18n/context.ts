@@ -1,6 +1,6 @@
 import { createContext } from 'react';
 import type { Language, Translation } from './types';
-import type { CvData } from '@/types';
+import type { CvData } from '@/types/cv';
 
 export interface I18nContextValue {
   lang: Language;

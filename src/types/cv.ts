@@ -1,4 +1,4 @@
-// Shape of the CV data loaded from `src/assets/cv_es.yaml`.
+// Shape of the CV data loaded from `src/content/cv/cv-es.yaml`.
 
 export interface SkillCategory {
   name: string;

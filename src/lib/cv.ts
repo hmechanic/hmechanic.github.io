@@ -1,8 +1,8 @@
 import yaml from 'js-yaml';
-import cvEsRaw from '../assets/cv_es.yaml?raw';
-import cvEnRaw from '../assets/cv_en.yaml?raw';
+import cvEsRaw from '@/content/cv/cv-es.yaml?raw';
+import cvEnRaw from '@/content/cv/cv-en.yaml?raw';
 
-import { CvData } from '../types';
+import { CvData } from '@/types/cv';
 import type { Language } from '@/i18n/types';
 
 // One parsed CV per supported language. Components pick the right one based on

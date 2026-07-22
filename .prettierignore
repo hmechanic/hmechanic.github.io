@@ -5,4 +5,4 @@ public/cv
 # CV content: hand-edited multiline strings that Prettier's YAML parser
 # mishandles (valid for js-yaml at runtime). Not reformatted to avoid altering
 # the text the site renders.
-src/assets/*.yaml
+src/content/cv/*.yaml
