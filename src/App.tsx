@@ -38,9 +38,9 @@ const HomePage = () => (
   <Page>
     <Hero />
     <About />
+    <Projects />
     <Experience />
     <Skills />
-    <Projects />
     <Contact />
   </Page>
 );
