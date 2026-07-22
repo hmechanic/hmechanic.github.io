@@ -51,9 +51,7 @@ const CvViewer = () => {
               <h1 className="text-4xl md:text-6xl font-bold tracking-tighter mb-3">
                 {t.cvPage.title}
               </h1>
-              <p className="max-w-2xl text-gray-400 leading-relaxed">
-                {t.cvPage.description}
-              </p>
+              <p className="max-w-2xl text-gray-400 leading-relaxed">{t.cvPage.description}</p>
             </div>
             {pdfStatus === 'available' ? (
               <a
