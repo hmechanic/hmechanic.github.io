@@ -45,7 +45,7 @@ const Projects = () => {
           {...headingReveal}
           className="text-3xl sm:text-4xl font-bold mb-16 flex items-center justify-end"
         >
-          <span className="mr-6 h-px bg-white/20 flex-grow max-w-xs"></span>
+          <span className="mr-6 h-px bg-white/20 grow max-w-xs"></span>
           {t.projects.title}
         </motion.h2>
 
@@ -60,7 +60,7 @@ const Projects = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
-              className={`${index === 0 ? 'border-[#2c2c34] bg-[#111115] hover:border-[#7c5cbf] focus-visible:border-[#7c5cbf] lg:col-start-2' : 'border-[#dbeafe] bg-[#f8fafc] hover:border-[#155dfc] focus-visible:border-[#155dfc]'} group relative isolate min-h-72 overflow-hidden rounded-xl border p-8 shadow-[0_4px_24px_#0006] transition-all duration-300 hover:-translate-y-2 focus-visible:outline-none lg:col-span-2`}
+              className={`${index === 0 ? 'border-[#2c2c34] bg-[#111115] hover:border-[#7c5cbf] focus-visible:border-[#7c5cbf] lg:col-start-2' : 'border-[#dbeafe] bg-[#f8fafc] hover:border-[#155dfc] focus-visible:border-[#155dfc]'} group relative isolate min-h-72 overflow-hidden rounded-xl border p-8 shadow-[0_4px_24px_#0006] transition-all duration-300 hover:-translate-y-2 focus-visible:outline-hidden lg:col-span-2`}
             >
               {index === 0 && (
                 <>
@@ -126,7 +126,7 @@ const Projects = () => {
                   <div className="flex h-full flex-col">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3">
-                        <span className="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-[#155dfc] to-[#9810fa] text-white shadow-[0_8px_24px_rgba(21,93,252,0.25)]">
+                        <span className="grid h-10 w-10 place-items-center rounded-xl bg-linear-to-br from-[#155dfc] to-[#9810fa] text-white shadow-[0_8px_24px_rgba(21,93,252,0.25)]">
                           <Satellite size={21} strokeWidth={1.8} />
                         </span>
                         <span className="font-mono text-[11px] uppercase tracking-[0.16em] text-[#4a5565]">
@@ -148,7 +148,7 @@ const Projects = () => {
                       </p>
                     </div>
 
-                    <div className="mt-auto rounded-lg border border-[#dbeafe] bg-white/80 p-3 shadow-sm">
+                    <div className="mt-auto rounded-lg border border-[#dbeafe] bg-white/80 p-3 shadow-xs">
                       <div className="mb-2 flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.12em] text-[#4a5565]">
                         <span>CH4</span>
                         <span>Median composite</span>

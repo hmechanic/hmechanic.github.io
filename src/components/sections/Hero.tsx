@@ -27,7 +27,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="min-h-[100svh] w-full flex items-center relative overflow-hidden pt-24 pb-12 md:pt-20 md:pb-0"
+      className="min-h-svh w-full flex items-center relative overflow-hidden pt-24 pb-12 md:pt-20 md:pb-0"
     >
       {/* Full-bleed animated background (three.js loaded lazily + deferred to idle,
                 fading in so its warm-up never stutters the hero intro). */}
@@ -43,9 +43,9 @@ const Hero = () => {
       </div>
 
       {/* Legibility overlay: darkens toward the left where the copy sits */}
-      <div className="absolute inset-0 z-[1] pointer-events-none bg-gradient-to-r from-dark-bg via-dark-bg/70 to-transparent" />
+      <div className="absolute inset-0 z-1 pointer-events-none bg-linear-to-r from-dark-bg via-dark-bg/70 to-transparent" />
       {/* Soft vertical vignette to seat the text against the scene */}
-      <div className="absolute inset-0 z-[1] pointer-events-none bg-gradient-to-b from-dark-bg/40 via-transparent to-dark-bg/60" />
+      <div className="absolute inset-0 z-1 pointer-events-none bg-linear-to-b from-dark-bg/40 via-transparent to-dark-bg/60" />
 
       {/* Text Content */}
       <div className="relative z-10 w-full md:w-3/5 flex flex-col justify-center items-start px-6 sm:px-8 md:pl-20">
@@ -60,13 +60,13 @@ const Hero = () => {
             {t.hero.greeting}{' '}
             <span className="whitespace-nowrap">
               {t.hero.namePrefix}{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan to-neon-purple filter drop-shadow-[0_0_10px_rgba(0,243,255,0.5)]">
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-neon-cyan to-neon-purple filter drop-shadow-[0_0_10px_rgba(0,243,255,0.5)]">
                 {name.split(' ')[0]}
               </span>
             </span>
           </h1>
           <div className="relative mb-6 sm:mb-8 w-full group">
-            <div className="absolute -inset-1 bg-gradient-to-r from-neon-cyan to-neon-purple opacity-20 blur transition duration-1000 group-hover:opacity-40"></div>
+            <div className="absolute -inset-1 bg-linear-to-r from-neon-cyan to-neon-purple opacity-20 blur-sm transition duration-1000 group-hover:opacity-40"></div>
             <div className="relative bg-black/60 backdrop-blur-md border-l-4 border-neon-cyan p-5 sm:p-6 rounded-r-xl shadow-[0_0_24px_rgba(0,243,255,0.12)]">
               <div className="text-gray-200 text-sm sm:text-base leading-7 sm:leading-8 text-pretty space-y-4">
                 {t.hero.tagline}
@@ -77,13 +77,13 @@ const Hero = () => {
           <div className="flex flex-wrap gap-3 sm:gap-4">
             <a
               href="#projects"
-              className="flex-1 sm:flex-none text-center whitespace-nowrap px-4 sm:px-8 py-3 bg-neon-cyan/10 border border-neon-cyan text-neon-cyan hover:bg-neon-cyan hover:text-black transition-all font-bold text-sm sm:text-base tracking-wide sm:tracking-wider rounded"
+              className="flex-1 sm:flex-none text-center whitespace-nowrap px-4 sm:px-8 py-3 bg-neon-cyan/10 border border-neon-cyan text-neon-cyan hover:bg-neon-cyan hover:text-black transition-all font-bold text-sm sm:text-base tracking-wide sm:tracking-wider rounded-sm"
             >
               {t.hero.viewProjects}
             </a>
             <a
               href="#contact"
-              className="flex-1 sm:flex-none text-center whitespace-nowrap px-4 sm:px-8 py-3 border border-white/20 text-white hover:border-white transition-all font-bold text-sm sm:text-base tracking-wide sm:tracking-wider rounded"
+              className="flex-1 sm:flex-none text-center whitespace-nowrap px-4 sm:px-8 py-3 border border-white/20 text-white hover:border-white transition-all font-bold text-sm sm:text-base tracking-wide sm:tracking-wider rounded-sm"
             >
               {t.hero.contact}
             </a>

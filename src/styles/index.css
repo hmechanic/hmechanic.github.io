@@ -1,54 +1,97 @@
 /* Font imported in index.html */
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-:root {
-  color-scheme: dark;
-}
+@theme {
+  --color-neon-cyan: #00f3ff;
+  --color-neon-magenta: #ff00ff;
+  --color-neon-purple: #bc13fe;
+  --color-neon-green: #00ff9f;
 
-body {
-  margin: 0;
-  background-color: #050505;
-  color: #ffffff;
-  font-family: 'Inter', sans-serif;
-  overflow-x: hidden;
-}
+  --color-dark-bg: #050505;
+  --color-dark-surface: #0a0a0a;
 
-/* The document opts into `viewport-fit=cover`, so honour the device safe areas
-   (notch / rounded corners) on landscape phones. Insets are 0 in portrait, so
-   this is a no-op there and only pads content away from a physical cutout. */
-@supports (padding: max(0px)) {
-  body {
-    padding-left: env(safe-area-inset-left);
-    padding-right: env(safe-area-inset-right);
+  --font-sans: Inter, sans-serif;
+
+  --animate-glow: glow 2s ease-in-out infinite alternate;
+
+  @keyframes glow {
+    0% {
+      box-shadow:
+        0 0 5px #00f3ff,
+        0 0 10px #00f3ff;
+    }
+    100% {
+      box-shadow:
+        0 0 20px #00f3ff,
+        0 0 30px #00f3ff;
+    }
   }
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@utility text-neon-cyan {
+  color: #00f3ff;
+  text-shadow:
+    0 0 5px #00f3ff,
+    0 0 10px #00f3ff;
+}
+
+@utility text-neon-magenta {
+  color: #ff00ff;
+  text-shadow:
+    0 0 5px #ff00ff,
+    0 0 10px #ff00ff;
+}
+
+@utility border-neon-cyan {
+  border-color: #00f3ff;
+  box-shadow: 0 0 5px #00f3ff;
+}
+
+@utility glass-panel {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 @layer utilities {
-  .text-neon-cyan {
-    color: #00f3ff;
-    text-shadow:
-      0 0 5px #00f3ff,
-      0 0 10px #00f3ff;
+  :root {
+    color-scheme: dark;
   }
 
-  .text-neon-magenta {
-    color: #ff00ff;
-    text-shadow:
-      0 0 5px #ff00ff,
-      0 0 10px #ff00ff;
+  body {
+    margin: 0;
+    background-color: #050505;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
   }
 
-  .border-neon-cyan {
-    border-color: #00f3ff;
-    box-shadow: 0 0 5px #00f3ff;
-  }
-
-  .glass-panel {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+  /* The document opts into `viewport-fit=cover`, so honour the device safe areas
+   (notch / rounded corners) on landscape phones. Insets are 0 in portrait, so
+   this is a no-op there and only pads content away from a physical cutout. */
+  @supports (padding: max(0px)) {
+    body {
+      padding-left: env(safe-area-inset-left);
+      padding-right: env(safe-area-inset-right);
+    }
   }
 }

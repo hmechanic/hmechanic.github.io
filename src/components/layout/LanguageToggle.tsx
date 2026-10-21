@@ -7,7 +7,7 @@ const LanguageToggle = ({ className = '' }: { className?: string }) => {
       type="button"
       aria-label={t.nav.toggleLanguage}
       onClick={toggleLang}
-      className={`font-mono text-sm uppercase tracking-wider text-gray-300 hover:text-neon-cyan transition-colors bg-transparent border border-white/20 rounded px-2 py-1 ${className}`}
+      className={`font-mono text-sm uppercase tracking-wider text-gray-300 hover:text-neon-cyan transition-colors bg-transparent border border-white/20 rounded-sm px-2 py-1 ${className}`}
     >
       {lang === 'es' ? 'EN' : 'ES'}
     </button>

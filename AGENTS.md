@@ -2,7 +2,7 @@
 
 ## Project Structure & Module Organization
 
-This repository is a Vite React/TypeScript portfolio site. Application code lives in `src/`, with the entry point in `src/main.tsx` and top-level composition in `src/App.tsx`. Reusable UI sections are in `src/components/`, while Three.js/react-three-fiber visuals are grouped under `src/components/3d/`. Shared types are in `src/types.ts`, utilities are in `src/utils/`, and content/assets such as `cv_es.yaml` and SVGs live in `src/assets/`. Static public files belong in `public/`. Build and tooling configuration is kept at the repository root (`vite.config.ts`, `tailwind.config.js`, `eslint.config.js`, and TypeScript configs).
+This repository is a Vite React/TypeScript portfolio site. Application code lives in `src/`, with the entry point in `src/main.tsx` and top-level composition in `src/App.tsx`. Reusable UI sections are in `src/components/`, while Three.js/react-three-fiber visuals are grouped under `src/components/3d/`. Shared types are in `src/types.ts`, utilities are in `src/utils/`, and content/assets such as `cv_es.yaml` and SVGs live in `src/assets/`. Static public files belong in `public/`. Build and tooling configuration is kept at the repository root (`vite.config.ts`, `eslint.config.js`, and TypeScript configs); the Tailwind theme is defined in `src/styles/index.css` via `@theme`.
 
 ## Build, Test, and Development Commands
 
@@ -13,6 +13,8 @@ This repository is a Vite React/TypeScript portfolio site. Application code live
 - `pnpm run preview`: serve the production build locally for verification.
 
 Run `pnpm run build` before deployment or major UI changes to catch strict TypeScript errors.
+
+Type checking uses TypeScript 7 (native `tsc`). Because typescript-eslint cannot run on TS 7 yet, `.pnpmfile.cjs` pins the lint toolchain to TypeScript 6; remove that hook once typescript-eslint supports TS 7.
 
 ## Coding Style & Naming Conventions
 

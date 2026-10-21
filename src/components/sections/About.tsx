@@ -20,7 +20,7 @@ const About = () => {
       {/* Ambient blooms */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute right-0 top-1/3 h-96 w-96 translate-x-1/2 rounded-full bg-neon-cyan/[0.04] blur-3xl"
+        className="pointer-events-none absolute right-0 top-1/3 h-96 w-96 translate-x-1/2 rounded-full bg-neon-cyan/4 blur-3xl"
       />
       <div
         aria-hidden="true"
@@ -47,7 +47,7 @@ const About = () => {
           transition={{ duration: 0.45 }}
         >
           <h2 className="flex items-center text-3xl font-bold sm:text-4xl">
-            <span className="bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-white to-white/80 bg-clip-text text-transparent">
               {profile.title}
             </span>
             <span
@@ -56,7 +56,7 @@ const About = () => {
             />
             <span
               aria-hidden="true"
-              className="ml-3 h-px max-w-xs flex-grow bg-gradient-to-r from-neon-cyan/40 via-white/15 to-transparent"
+              className="ml-3 h-px max-w-xs grow bg-linear-to-r from-neon-cyan/40 via-white/15 to-transparent"
             />
           </h2>
         </motion.div>
@@ -72,16 +72,16 @@ const About = () => {
             {t.about.intro}
           </p>
 
-          <div className="mt-9 h-px w-full bg-gradient-to-r from-white/20 via-white/10 to-transparent" />
+          <div className="mt-9 h-px w-full bg-linear-to-r from-white/20 via-white/10 to-transparent" />
 
           <div className="mt-9 grid items-start gap-12 lg:grid-cols-[minmax(0,1fr)_15rem] lg:gap-16">
             <div className="relative order-2 text-[1.02rem] leading-8 text-slate-300 md:columns-2 md:gap-10 md:[column-rule:1px_solid_rgba(255,255,255,0.08)] lg:order-1">
               {/* Slim accent rail marking the body copy */}
               <span
                 aria-hidden="true"
-                className="absolute -left-5 top-1 hidden h-14 w-px bg-gradient-to-b from-neon-cyan/60 to-transparent lg:block"
+                className="absolute -left-5 top-1 hidden h-14 w-px bg-linear-to-b from-neon-cyan/60 to-transparent lg:block"
               />
-              <p className="mb-7 break-inside-avoid text-left first-letter:float-left first-letter:mr-2 first-letter:mt-2 first-letter:bg-gradient-to-br first-letter:from-neon-cyan first-letter:to-neon-purple first-letter:bg-clip-text first-letter:text-5xl first-letter:font-semibold first-letter:leading-9 first-letter:text-transparent">
+              <p className="mb-7 break-inside-avoid text-left first-letter:float-left first-letter:mr-2 first-letter:mt-2 first-letter:bg-linear-to-br first-letter:from-neon-cyan first-letter:to-neon-purple first-letter:bg-clip-text first-letter:text-5xl first-letter:font-semibold first-letter:leading-9 first-letter:text-transparent">
                 {t.about.areas.map((area, index) => (
                   <span key={area.number}>
                     {index > 0 && ' '}
@@ -99,7 +99,7 @@ const About = () => {
 
             <aside className="order-1 mx-auto w-full max-w-xs lg:order-2 lg:sticky lg:top-28 lg:mx-0">
               <figure className="group">
-                <div className="relative aspect-[4/5] overflow-hidden border border-white/15 bg-gradient-to-br from-white/[0.035] to-white/[0.01] transition-colors duration-500 group-hover:border-white/25">
+                <div className="relative aspect-4/5 overflow-hidden border border-white/15 bg-linear-to-br from-white/[0.035] to-white/1 transition-colors duration-500 group-hover:border-white/25">
                   <img
                     src="/I.JPG"
                     alt={t.about.photo.label}
@@ -127,7 +127,7 @@ const About = () => {
                   {/* Subtle diagonal sheen */}
                   <span
                     aria-hidden="true"
-                    className="absolute inset-0 bg-gradient-to-tr from-black/15 via-transparent to-white/[0.05]"
+                    className="absolute inset-0 bg-linear-to-tr from-black/15 via-transparent to-white/5"
                   />
                 </div>
               </figure>
@@ -147,7 +147,7 @@ const About = () => {
                   >
                     <span
                       aria-hidden="true"
-                      className={`absolute -left-3 top-4 hidden h-6 w-px bg-gradient-to-b ${statBars[index % 3]} opacity-0 transition-opacity duration-300 group-hover:opacity-100 lg:block`}
+                      className={`absolute -left-3 top-4 hidden h-6 w-px bg-linear-to-b ${statBars[index % 3]} opacity-0 transition-opacity duration-300 group-hover:opacity-100 lg:block`}
                     />
                     <dd className="text-2xl font-semibold tabular-nums tracking-tight text-white transition-colors duration-300 group-hover:text-white">
                       {stat.value}

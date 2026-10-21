@@ -21,7 +21,7 @@ const Contact = () => {
             href={`https://wa.me/${phoneNumber}?text=${message}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block px-10 py-4 border-2 border-neon-cyan text-neon-cyan font-bold rounded hover:bg-neon-cyan/10 transition-all shadow-[0_0_10px_rgba(0,243,255,0.2)] hover:shadow-[0_0_20px_rgba(0,243,255,0.4)]"
+            className="inline-block px-10 py-4 border-2 border-neon-cyan text-neon-cyan font-bold rounded-sm hover:bg-neon-cyan/10 transition-all shadow-[0_0_10px_rgba(0,243,255,0.2)] hover:shadow-[0_0_20px_rgba(0,243,255,0.4)]"
           >
             {t.contact.cta}
           </a>

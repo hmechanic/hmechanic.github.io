@@ -58,13 +58,13 @@ const CvPage = () => {
                 href={pdfUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded border border-neon-cyan px-5 py-3 font-mono text-sm uppercase tracking-wider text-neon-cyan transition-colors hover:bg-neon-cyan hover:text-black"
+                className="inline-flex items-center justify-center gap-2 rounded-sm border border-neon-cyan px-5 py-3 font-mono text-sm uppercase tracking-wider text-neon-cyan transition-colors hover:bg-neon-cyan hover:text-black"
               >
                 {t.cvPage.openPdf}
                 <ExternalLink size={16} />
               </a>
             ) : (
-              <span className="inline-flex items-center justify-center gap-2 rounded border border-white/20 px-5 py-3 font-mono text-sm uppercase tracking-wider text-gray-500">
+              <span className="inline-flex items-center justify-center gap-2 rounded-sm border border-white/20 px-5 py-3 font-mono text-sm uppercase tracking-wider text-gray-500">
                 {t.cvPage.openPdf}
                 <ExternalLink size={16} />
               </span>
