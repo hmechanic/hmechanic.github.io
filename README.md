@@ -59,7 +59,7 @@ pnpm run preview
 - `src/main.tsx`: punto de entrada de React.
 - `src/App.tsx`: composición principal del sitio.
 - `src/components/`: secciones y componentes reutilizables.
-- `src/components/3d/`: componentes visuales con Three.js.
+- `src/components/three/`: escena 3D del Hero con Three.js.
 - `src/assets/`: contenido y recursos del portafolio.
 - `public/`: archivos estáticos servidos sin procesar.
 

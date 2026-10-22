@@ -2,7 +2,7 @@
 
 ## Project Structure & Module Organization
 
-This repository is a Vite React/TypeScript portfolio site. Application code lives in `src/`, with the entry point in `src/main.tsx` and top-level composition in `src/App.tsx`. Reusable UI sections are in `src/components/`, while Three.js/react-three-fiber visuals are grouped under `src/components/3d/`. Shared types are in `src/types.ts`, utilities are in `src/utils/`, and content/assets such as `cv_es.yaml` and SVGs live in `src/assets/`. Static public files belong in `public/`. Build and tooling configuration is kept at the repository root (`vite.config.ts`, `eslint.config.js`, and TypeScript configs); the Tailwind theme is defined in `src/styles/index.css` via `@theme`.
+This repository is a Vite React/TypeScript portfolio site. Application code lives in `src/`, with the entry point in `src/main.tsx` and top-level composition in `src/App.tsx`. Reusable UI sections are in `src/components/`, while the hero's Three.js scene lives under `src/components/three/` (plain three.js, no react-three-fiber). Shared types are in `src/types.ts`, utilities are in `src/utils/`, and content/assets such as `cv_es.yaml` and SVGs live in `src/assets/`. Static public files belong in `public/`. Build and tooling configuration is kept at the repository root (`vite.config.ts`, `eslint.config.js`, and TypeScript configs); the Tailwind theme is defined in `src/styles/index.css` via `@theme`.
 
 ## Build, Test, and Development Commands
 
@@ -10,6 +10,7 @@ This repository is a Vite React/TypeScript portfolio site. Application code live
 - `pnpm run dev`: start the local Vite development server with hot reload.
 - `pnpm run build`: run TypeScript project checks, then create the production build in `dist/`.
 - `pnpm run lint`: lint TypeScript and React files with ESLint.
+- `pnpm test`: run the Vitest suite once (`pnpm run test:watch` to keep it running).
 - `pnpm run preview`: serve the production build locally for verification.
 
 Run `pnpm run build` before deployment or major UI changes to catch strict TypeScript errors.
@@ -22,7 +23,7 @@ Use TypeScript, React function components, and ES modules. Component files use P
 
 ## Testing Guidelines
 
-There is currently no dedicated test framework configured. For changes, rely on `pnpm run lint`, `pnpm run build`, and manual checks in `pnpm run dev` or `pnpm run preview`. If tests are added later, place them near the feature they cover using a clear pattern such as `ComponentName.test.tsx`, and document the new test command in `package.json` and this guide.
+Tests use Vitest, which reuses `vite.config.ts` (so `.yaml` imports are parsed the same way as in the app). Place them next to the code they cover as `name.test.ts(x)`; current suites check the CV data (`src/lib/cv.test.ts`) and that both locales define the same keys (`src/i18n/locales/locales.test.ts`). For changes, run `pnpm test`, `pnpm run lint` and `pnpm run build`, plus manual checks in `pnpm run dev` or `pnpm run preview` for UI work.
 
 ## Commit & Pull Request Guidelines
 
