@@ -21,7 +21,7 @@ const Experience = () => {
           className="text-3xl sm:text-4xl font-bold mb-16 flex items-center"
         >
           {t.experience.title}
-          <span className="ml-6 h-px bg-white/20 flex-grow max-w-xs"></span>
+          <span className="ml-6 h-px bg-white/20 grow max-w-xs"></span>
         </motion.h2>
 
         <div className="space-y-16">
@@ -41,7 +41,7 @@ const Experience = () => {
                     className="relative pl-8 md:pl-12"
                   >
                     {/* Dot on timeline */}
-                    <span className="absolute -left-[5px] top-2 w-2.5 h-2.5 rounded-full bg-neon-magenta shadow-[0_0_10px_#ff00ff]"></span>
+                    <span className="absolute left-[-5px] top-2 w-2.5 h-2.5 rounded-full bg-neon-magenta shadow-[0_0_10px_#ff00ff]"></span>
 
                     <div className="bg-white/5 border border-white/10 p-6 rounded-lg hover:border-neon-cyan/50 transition-colors group">
                       <h4 className="text-2xl font-bold text-white group-hover:text-neon-cyan">

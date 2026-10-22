@@ -42,10 +42,10 @@ export const es: Translation = {
     tagline: (
       <>
         <p>
-          Ingeniero, Creativo, Autodidacto, explorador de ideas... <br /> y de frailejones 🌿.
+          Ingeniero, Builder Creativo, Autodidacto, explorador de ideas... <br /> y de frailejones 🌿.
         </p>
         <p>
-          Utilizo tecnología, creatividad, mis capacidades análiticas y la forma apasionada de
+          Utilizo tecnología, creatividad, mis capacidades analíticas y la forma apasionada de
           enfrentarme a los retos para aportar a crear y mantener un mundo con valores, sueños y
           conciencia.
         </p>
@@ -56,7 +56,7 @@ export const es: Translation = {
       </>
     ),
     viewProjects: 'VER PROYECTOS',
-    contact: 'CONTACTAR',
+    contact: '¡HABLEMOS!',
   },
   about: {
     intro: (
@@ -68,26 +68,25 @@ export const es: Translation = {
     areas: [
       {
         number: '01',
-        title: 'Ingeniería e investigación aplicada',
+        title: 'Builder',
         content: (
           <>
-            La primera es la participación activa en{' '}
-            <span className="text-neon-cyan">investigación aplicada</span>, especialmente en temas
-            relacionados con energía, cambio climático, análisis de datos y modelación de sistemas.
+            La primera es mi carrera como builder, construir productos y empresas, hacer cosas
+            difíciles y tener la resiliencia que implica este proceso.
+            Construir tecnología y hablar con clientes, iterar soluciones, brindar soluciones conectadas con
+            las necesidades de las personas, construyendo crecimiento conjunto. Amo construir usando el poder de la tecnología.
+
           </>
         ),
       },
       {
         number: '02',
-        title: 'Software e inteligencia artificial',
+        title: 'Ingeniería e investigación aplicada',
         content: (
           <>
-            La segunda es el desarrollo de software complejo para resolver problemas de ingeniería y
-            construir productos tecnológicos. En esta área implemento tecnologías relacionadas con
-            el análisis y la gestión de datos, el desarrollo de software y la creación de proyectos{' '}
-            <span className="text-neon-magenta font-bold">AI First</span>, incluyendo programación
-            de agentes, diseño de arquitecturas de machine learning, automatización de procesos e
-            integración de sistemas.
+            La segunda es la participación activa en{' '}
+            <span className="text-neon-cyan">investigación aplicada</span>, especialmente en temas
+            relacionados con energía, cambio climático, análisis de datos y modelación de sistemas.
           </>
         ),
       },
@@ -132,6 +131,12 @@ export const es: Translation = {
             proyectos. Cuento con cerca de cuatro años de experiencia certificada y me especializo
             en la construcción de soluciones que integran datos, inteligencia artificial, software e
             ingeniería aplicada.
+
+            Una de las mejores experiencias que he tenido es iniciar la construcción de orionatiende.com,
+            me ha enseñado mucho acerca de lo que es construir un producto, venderlo, enfrentarse al rechazo,
+            gestionar recursos, planificar, crear estrategias, prototipar e iterar. En general ha sido mi proyecto
+            más retador al exigirme tomar decisiones no basadas en sentimientos sino en datos y enfrentarme a
+            lo difícil de construir un negocio.
           </>
         ),
       },
@@ -159,7 +164,7 @@ export const es: Translation = {
   projects: {
     title: 'Proyectos Destacados',
     descriptions: {
-      'Orion Atiende': 'Plataforma de operación comercial, leads y automatización.',
+      'Orion Atiende': 'Agentes AI para el futuro de las ventas e interacción agéntica.',
       SatEmis:
         'Plataforma de inteligencia climática para visualizar concentraciones satelitales de metano y apoyar la gestión de emisiones.',
       Creasinhumo:
@@ -176,10 +181,10 @@ export const es: Translation = {
   },
   contact: {
     eyebrow: '¿Qué sigue?',
-    title: 'Contáctame',
+    title: 'Hablemos, exploremos oportunidades.',
     body: 'Actualmente estoy abierto a nuevas oportunidades. Ya sea que tengas una pregunta o simplemente quieras saludar, ¡haré todo lo posible por responderte!',
     cta: 'Conversar en WhatsApp',
-    whatsappMessage: 'Hola Hernán, vi tu portafolio y me gustaría contactarte...',
+    whatsappMessage: 'Hola Hernán, construyamos el futuro juntos!',
   },
-  footer: 'Hecho con React & Three.js.',
+  footer: 'Amemos la naturaleza, avancemos de forma responsable.',
 };

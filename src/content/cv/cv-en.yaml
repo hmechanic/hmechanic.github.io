@@ -19,10 +19,32 @@ subheading:
 professional_profile:
     title: "Professional Profile"
     content: "
-    I am a mechanical engineer with more than three years of experience in software development and data analysis, specialized in building solutions based on Python and JavaScript that integrate SQL databases and web services. My background combines the modeling of energy systems with the implementation of microservice architectures, which lets me design and develop applications that meet quality standards and enable data-driven decision making.
+      I am a mechanical engineer and have directed my professional career toward two main areas.
 
-    In my current role at SatEmis, I designed and deployed the microservice architecture using nest.js, Docker and FastAPI, optimizing the ingestion and processing of satellite data and ensuring efficient management on Google Cloud Platform. I also led the integration of SQL and NoSQL databases to support large volumes of information, improving the availability and consistency of critical data. Previously, I coordinated multidisciplinary teams in building the national energy model with the TIMES framework, developing analytical tools in Python that automated the processing of large datasets and streamlined the generation of strategic reports.
-    "
+      The first is building products and companies: doing hard things and sustaining the
+      resilience that process demands. That means developing technology, talking to customers,
+      and iterating until the solutions connect with people's real needs. Here I develop software
+      and *AI First* projects, including agent programming, machine learning architectures,
+      process automation, and systems integration.
+
+      The second is active involvement in applied research, particularly in energy, climate
+      change, data analysis, and systems modeling.
+
+      My recent work centers on two projects: OrionAtiende.com, a SaaS of AI agents for sales and
+      customer service over WhatsApp, and SatEmis, a climate research platform that applies
+      machine learning to satellite data at scale. Orion has been my most challenging project: it
+      has taught me to build a product, sell it, face rejection, manage resources, and iterate,
+      making decisions based on data rather than feelings.
+
+      As a mechanical engineering consultant, I work in thermal and fluid systems: renewable
+      energy, energy modeling, computational fluid dynamics (CFD), climate change mitigation,
+      emissions inventories, and remote monitoring.
+
+      I have nearly four years of certified experience as a lead engineer in software design and
+      development, building solutions that integrate data, artificial intelligence, and applied
+      engineering.
+
+      "
 
 sections:
   - type: education
@@ -57,15 +79,16 @@ sections:
         entity:
           - organization: "Orion AI"
             dates: "March 2026 - Present"
-            position: "Creator and Technical Lead"
+            position: "Founder and Full-Stack Developer"
             responsibilities:
-              - "Led the design, development, and evolution of Orion AI from the ground up, building a multi-tenant SaaS platform that combines CRM, conversational agents, and WhatsApp sales and support automation."
-              - "Designed a full-stack architecture with Next.js, React, TypeScript, FastAPI, and PostgreSQL, applying asynchronous processing, tenant isolation, and server-first patterns."
-              - "Implemented LangGraph agents with persistent conversational memory and tools for knowledge retrieval, sales funnel updates, and human handoff."
-              - "Built a Qdrant-based RAG system for indexing PDF, Markdown, and TXT documents, with configurable embeddings, agent-isolated semantic search, and durable retryable workers."
-              - "Integrated Chatwoot, WhatsApp Cloud, and Notion to manage channels, webhooks, voice notes, Agent Bots, and bidirectional lead synchronization."
-              - "Developed the CRM and its operational analytics, including lead tracking, roles and permissions, payment statuses, conversion metrics, and knowledge base management."
-              - "Established product security, observability, and operations through JWT, RBAC, credential encryption, rate limiting, Prometheus metrics, automated testing, Docker, and Railway deployments."
+              - "Founded and built Orion AI (orionatiende.com) end to end: a multi-tenant SaaS in production that handles WhatsApp conversations with AI agents and turns each one into an actionable CRM. I own the product, architecture, billing, and go-to-market."
+              - "Developed the backend with FastAPI and PostgreSQL and the frontend with Next.js 16 (React, TypeScript, Server Components, and a BFF). It includes per-tenant data isolation, asynchronous workers with an outbox and idempotent retries, and nearly 1,900 automated tests across almost 600 commits."
+              - "Designed the conversational engine with LangGraph: persistent memory, voice note transcription, and tools to query knowledge, move deals through the funnel, and hand off to human agents in Chatwoot. Contacts and deals are created deterministically before the model is invoked, so the LLM only modifies records that already exist."
+              - "Built a RAG system on Qdrant for PDF, Markdown, and TXT, with configurable embeddings, agent-isolated search, and a durable indexing worker. Also integrated a classifier model that places each conversation in its funnel stage."
+              - "Drove the Meta integration to completion: business verification, approved App Review for the WhatsApp Business permissions, and an in-house Embedded Signup v4 flow that lets each company connect its number without manual support."
+              - "Implemented recurring subscriptions with Wompi (cards with 3DS, renewals, retention, and plan-based access control) and platform security: passwordless login (email code and Google), JWT, fine-grained RBAC, credential encryption, and rate limiting. I run the system on Railway and a VPS with Docker and self-hosted Chatwoot, with Prometheus metrics and Grafana alerts."
+              - "Validated the market in the field by calling +200 tourism businesses (70 responses and 30 demos), and currently have 8 paying clients. Built a prospecting pipeline on open data from Colombia's National Tourism Registry (about 95,000 businesses) and a Meta Ads catalog for an iterative experiment to discover the ideal customer profile."
+              - "Organized development as a team of AI agents (Claude Code and OpenCode), one session per repository, coordinated through a knowledge base that an LLM pipeline keeps in sync with the commits."
 
           - organization: "SatEmis"
             dates: "August 2025 - Present"

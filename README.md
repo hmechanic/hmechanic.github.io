@@ -4,7 +4,7 @@ Portafolio personal construido con React, TypeScript, Vite, Tailwind CSS y compo
 
 ## Requisitos
 
-- Node.js 22.13 o superior.
+- Node.js 24 (LTS) o superior.
 - pnpm 11.9.0. Si usas Corepack:
 
 ```bash

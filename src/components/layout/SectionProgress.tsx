@@ -68,7 +68,7 @@ const SectionProgress = () => {
         {/* Progress fill drawn as you scroll */}
         <motion.span
           aria-hidden="true"
-          className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 origin-top bg-gradient-to-b from-neon-cyan via-neon-magenta to-neon-purple"
+          className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 origin-top bg-linear-to-b from-neon-cyan via-neon-magenta to-neon-purple"
           style={{ scaleY: fill }}
         />
 
@@ -81,7 +81,7 @@ const SectionProgress = () => {
               onClick={() => goTo(item.id)}
               aria-current={isActive ? 'true' : undefined}
               aria-label={item.label}
-              className="group relative z-10 flex items-center outline-none"
+              className="group relative z-10 flex items-center outline-hidden"
             >
               {/* Label reveals to the left on hover / focus */}
               <span

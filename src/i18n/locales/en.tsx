@@ -40,7 +40,7 @@ export const en: Translation = {
     tagline: (
       <>
         <p>
-          Engineer, Creative, Self-taught, explorer of ideas... <br /> and frailejones 🌿.
+          Engineer, Creative Builder, Self-taught, explorer of ideas... <br /> and frailejones 🌿.
         </p>
         <p>
           I use technology, creativity, my analytical skills and a passionate approach to challenges
@@ -65,26 +65,24 @@ export const en: Translation = {
     areas: [
       {
         number: '01',
-        title: 'Engineering and applied research',
+        title: 'Builder',
         content: (
           <>
-            The first is active involvement in{' '}
-            <span className="text-neon-cyan">applied research</span>, particularly in energy,
-            climate change, data analysis and systems modelling.
+            The first is my path as a builder: building products and companies, doing hard things
+            and having the resilience that this process demands. Building technology and talking to
+            customers, iterating on solutions, delivering solutions connected to people's needs and
+            growing together. I love building with the power of technology.
           </>
         ),
       },
       {
         number: '02',
-        title: 'Software and artificial intelligence',
+        title: 'Engineering and applied research',
         content: (
           <>
-            The second is the development of complex software to solve engineering problems and
-            build technology products. In this area, I implement technologies related to data
-            analysis and management, software development and the creation of{' '}
-            <span className="text-neon-magenta font-bold">AI First</span> projects, including agent
-            programming, machine learning architecture design, process automation and systems
-            integration.
+            The second is active involvement in{' '}
+            <span className="text-neon-cyan">applied research</span>, particularly in energy,
+            climate change, data analysis and systems modelling.
           </>
         ),
       },
@@ -127,6 +125,12 @@ export const en: Translation = {
             In software, I work as a lead engineer in the design and development of projects. I have
             nearly four years of certified experience and specialise in building solutions that
             integrate data, artificial intelligence, software and applied engineering.
+
+            One of the best experiences I have had is starting to build orionatiende.com. It has
+            taught me a lot about what it takes to build a product, sell it, face rejection, manage
+            resources, plan, create strategies, prototype and iterate. Overall, it has been my most
+            challenging project, pushing me to make decisions based on data rather than feelings and
+            to face the hard parts of building a business.
           </>
         ),
       },
@@ -154,7 +158,7 @@ export const en: Translation = {
   projects: {
     title: 'Featured Projects',
     descriptions: {
-      'Orion Atiende': 'Commercial operations, leads, and automation platform.',
+      'Orion Atiende': 'AI agents for the future of sales and agentic interaction.',
       SatEmis:
         'Climate intelligence platform for visualizing satellite methane concentrations and supporting emissions management.',
       Creasinhumo:
@@ -171,10 +175,10 @@ export const en: Translation = {
   },
   contact: {
     eyebrow: "What's next?",
-    title: 'Get in touch',
+    title: "Let's talk and explore opportunities.",
     body: "I'm currently open to new opportunities. Whether you have a question or just want to say hi, I'll do my best to get back to you!",
     cta: 'Chat on WhatsApp',
-    whatsappMessage: "Hi Hernán, I saw your portfolio and I'd like to get in touch...",
+    whatsappMessage: "Hi Hernán, let's build the future together!",
   },
-  footer: 'Built with React & Three.js.',
+  footer: "Let's love nature and move forward responsibly.",
 };

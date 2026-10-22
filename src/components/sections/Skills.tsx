@@ -35,7 +35,7 @@ const Skills = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ delay: index * 0.1 }}
-              className="bg-white/5 border border-white/10 rounded-lg p-6 backdrop-blur-sm"
+              className="bg-white/5 border border-white/10 rounded-lg p-6 backdrop-blur-xs"
             >
               <h3 className="text-xl font-bold text-neon-magenta mb-4">{category.name}</h3>
               <div className="flex flex-wrap gap-2">
