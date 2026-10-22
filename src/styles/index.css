@@ -16,18 +16,46 @@
 
   --font-sans: Inter, sans-serif;
 
-  --animate-glow: glow 2s ease-in-out infinite alternate;
+  /* Typewriter caret: hard on/off like a real text cursor. */
+  --animate-caret-blink: caret-blink 1.06s step-end infinite;
+  /* Navbar /cv link. Pure CSS so it costs no JS per frame. */
+  --animate-neon-pulse: neon-pulse 1.8s ease-in-out infinite;
+  /* Hero scroll cue: a dot sliding down inside the mouse outline. */
+  --animate-scroll-dot: scroll-dot 1.8s ease-in-out infinite;
 
-  @keyframes glow {
+  @keyframes caret-blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes neon-pulse {
+    0%,
+    100% {
+      text-shadow: 0 0 5px #00f3ff;
+    }
+    50% {
+      text-shadow:
+        0 0 16px #00f3ff,
+        0 0 24px #ff00ff;
+    }
+  }
+
+  @keyframes scroll-dot {
     0% {
-      box-shadow:
-        0 0 5px #00f3ff,
-        0 0 10px #00f3ff;
+      transform: translateY(0);
+      opacity: 0;
+    }
+    30% {
+      opacity: 1;
     }
     100% {
-      box-shadow:
-        0 0 20px #00f3ff,
-        0 0 30px #00f3ff;
+      transform: translateY(10px);
+      opacity: 0;
     }
   }
 }

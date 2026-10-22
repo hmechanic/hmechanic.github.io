@@ -34,6 +34,8 @@ export interface Translation {
     tagline: ReactNode;
     viewProjects: string;
     contact: string;
+    /** Label of the scroll cue at the bottom of the hero. */
+    scroll: string;
   };
   about: {
     intro: ReactNode;

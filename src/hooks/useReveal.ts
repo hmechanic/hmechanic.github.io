@@ -2,7 +2,7 @@ import { useReducedMotion } from 'framer-motion';
 
 // A soft, refined easing curve (ease-out-quint-ish) shared across section reveals
 // so every entrance in the site feels like one coherent motion language.
-const EASE = [0.22, 1, 0.36, 1] as const;
+export const EASE = [0.22, 1, 0.36, 1] as const;
 
 export type RevealDirection = 'up' | 'left' | 'right' | 'none';
 
@@ -41,5 +41,30 @@ export const useReveal = (delay = 0, direction: RevealDirection = 'up') => {
     whileInView: { opacity: 1, x: 0, y: 0, filter: 'blur(0px)' },
     viewport: { once: true, margin: '-80px' },
     transition: { duration: 0.6, ease: EASE, delay },
+  };
+};
+
+/**
+ * Lighter variant for repeated cards: no blur (animating a filter on large boxes
+ * repaints every frame on phones) and a stagger by index. Plays once.
+ */
+export const useCardReveal = (step = 0.08) => {
+  const shouldReduceMotion = useReducedMotion();
+  return (index: number, direction: RevealDirection = 'up') => {
+    if (shouldReduceMotion) {
+      return {
+        initial: { opacity: 0 },
+        whileInView: { opacity: 1 },
+        viewport: { once: true, margin: '-60px' },
+        transition: { duration: 0.3 },
+      } as const;
+    }
+    const { x, y } = offsetFor(direction);
+    return {
+      initial: { opacity: 0, x, y },
+      whileInView: { opacity: 1, x: 0, y: 0 },
+      viewport: { once: true, margin: '-60px' },
+      transition: { duration: 0.5, ease: EASE, delay: index * step },
+    };
   };
 };

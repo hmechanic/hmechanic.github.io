@@ -50,13 +50,14 @@ export const es: Translation = {
           conciencia.
         </p>
         <p>
-          Me gustá apreciar, aportar e impulsar al límite poder del conocimiento y las capacidades
-          de nuestra especie para tranformar nuestra realidad.
+          Me gusta apreciar, aportar e impulsar al límite el poder del conocimiento y las capacidades
+          de nuestra especie para transformar nuestra realidad.
         </p>
       </>
     ),
     viewProjects: 'VER PROYECTOS',
     contact: '¡HABLEMOS!',
+    scroll: 'Explorar',
   },
   about: {
     intro: (
@@ -128,7 +129,7 @@ export const es: Translation = {
         content: (
           <>
             En el área de software, trabajo como ingeniero líder en el diseño y desarrollo de
-            proyectos. Cuento con cerca de cuatro años de experiencia certificada y me especializo
+            proyectos. Cuento con más de cuatro años de experiencia certificada y me especializo
             en la construcción de soluciones que integran datos, inteligencia artificial, software e
             ingeniería aplicada.
 
@@ -145,7 +146,7 @@ export const es: Translation = {
       label: 'Fotografía profesional',
     },
     stats: [
-      { value: '3+', label: 'Años de experiencia' },
+      { value: '4+', label: 'Años de experiencia' },
       { value: '10+', label: 'Proyectos de IA' },
       { value: '100%', label: 'Compromiso' },
     ],
@@ -168,7 +169,7 @@ export const es: Translation = {
       SatEmis:
         'Plataforma de inteligencia climática para visualizar concentraciones satelitales de metano y apoyar la gestión de emisiones.',
       Creasinhumo:
-        'Es un proyecto personal donde comparto mis experiencias y aprendizajes tratando de aportar contenido de valor a mi red, la filosofia es de enseñanza a los demas al tiempo que aprendo',
+        'Es un proyecto personal donde comparto mis experiencias y aprendizajes tratando de aportar contenido de valor a mi red, la filosofía es de enseñanza a los demás al tiempo que aprendo.',
       'cv-tool':
         'Herramienta para la generación automática de currículums profesionales en formato PDF. Facilita la vida aplicando a diferentes ofertas laborales',
       'SatEmis Platform':
@@ -184,7 +185,7 @@ export const es: Translation = {
     title: 'Hablemos, exploremos oportunidades.',
     body: 'Actualmente estoy abierto a nuevas oportunidades. Ya sea que tengas una pregunta o simplemente quieras saludar, ¡haré todo lo posible por responderte!',
     cta: 'Conversar en WhatsApp',
-    whatsappMessage: 'Hola Hernán, construyamos el futuro juntos!',
+    whatsappMessage: '¡Hola, Hernán! Construyamos el futuro juntos.',
   },
   footer: 'Amemos la naturaleza, avancemos de forma responsable.',
 };

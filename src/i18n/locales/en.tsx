@@ -35,7 +35,7 @@ export const en: Translation = {
     missingPdf: 'The English PDF is not available yet. Add the public/cv/cv-en.pdf file.',
   },
   hero: {
-    greeting: 'Hi,',
+    greeting: 'Welcome to my space.',
     namePrefix: "I'm",
     tagline: (
       <>
@@ -54,6 +54,7 @@ export const en: Translation = {
     ),
     viewProjects: 'VIEW PROJECTS',
     contact: 'GET IN TOUCH',
+    scroll: 'Scroll',
   },
   about: {
     intro: (
@@ -123,7 +124,7 @@ export const en: Translation = {
         content: (
           <>
             In software, I work as a lead engineer in the design and development of projects. I have
-            nearly four years of certified experience and specialise in building solutions that
+            over four years of certified experience and specialise in building solutions that
             integrate data, artificial intelligence, software and applied engineering.
 
             One of the best experiences I have had is starting to build orionatiende.com. It has
@@ -139,7 +140,7 @@ export const en: Translation = {
       label: 'Professional portrait',
     },
     stats: [
-      { value: '3+', label: 'Years of experience' },
+      { value: '4+', label: 'Years of experience' },
       { value: '10+', label: 'AI projects' },
       { value: '100%', label: 'Commitment' },
     ],
