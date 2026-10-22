@@ -13,8 +13,13 @@ const isLanguage = (value: string | null): value is Language =>
 /** Pick the initial language from a previous choice, then the browser, then Spanish. */
 const getInitialLanguage = (): Language => {
   if (typeof window === 'undefined') return 'es';
-  const stored = window.localStorage.getItem(STORAGE_KEY);
-  if (isLanguage(stored)) return stored;
+  // Storage can throw (blocked cookies, some private modes): fall through.
+  try {
+    const stored = window.localStorage.getItem(STORAGE_KEY);
+    if (isLanguage(stored)) return stored;
+  } catch {
+    /* ignore */
+  }
   return window.navigator.language.toLowerCase().startsWith('en') ? 'en' : 'es';
 };
 
@@ -22,8 +27,12 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const [lang, setLangState] = useState<Language>(getInitialLanguage);
 
   useEffect(() => {
-    window.localStorage.setItem(STORAGE_KEY, lang);
     document.documentElement.lang = lang;
+    try {
+      window.localStorage.setItem(STORAGE_KEY, lang);
+    } catch {
+      /* the choice just won't persist */
+    }
   }, [lang]);
 
   const value = useMemo<I18nContextValue>(

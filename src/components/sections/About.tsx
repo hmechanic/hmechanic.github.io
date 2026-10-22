@@ -101,7 +101,9 @@ const About = () => {
               <figure className="group">
                 <div className="relative aspect-4/5 overflow-hidden border border-white/15 bg-linear-to-br from-white/[0.035] to-white/1 transition-colors duration-500 group-hover:border-white/25">
                   <img
-                    src="/I.JPG"
+                    src="/profile.webp"
+                    width={900}
+                    height={1201}
                     alt={t.about.photo.label}
                     loading="lazy"
                     decoding="async"

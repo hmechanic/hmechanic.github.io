@@ -2,12 +2,13 @@ import { motion } from 'framer-motion';
 import { ExternalLink, Folder, Satellite } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
 import { useI18n } from '@/hooks/useI18n';
-import { useReveal } from '@/hooks/useReveal';
+import { useCardReveal, useReveal } from '@/hooks/useReveal';
 
 const Projects = () => {
   const { t } = useI18n();
   // The Projects heading is right-aligned, so it drifts in from the right.
   const headingReveal = useReveal(0, 'right');
+  const cardReveal = useCardReveal(0.1);
   // Project titles/tech/links are language-independent; descriptions come from
   // the translation dictionary, keyed by title.
   const flagshipProjects = [
@@ -57,9 +58,7 @@ const Projects = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={project.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
+              {...cardReveal(index)}
               className={`${index === 0 ? 'border-[#2c2c34] bg-[#111115] hover:border-[#7c5cbf] focus-visible:border-[#7c5cbf] lg:col-start-2' : 'border-[#dbeafe] bg-[#f8fafc] hover:border-[#155dfc] focus-visible:border-[#155dfc]'} group relative isolate min-h-72 overflow-hidden rounded-xl border p-8 shadow-[0_4px_24px_#0006] transition-all duration-300 hover:-translate-y-2 focus-visible:outline-hidden lg:col-span-2`}
             >
               {index === 0 && (
@@ -170,9 +169,7 @@ const Projects = () => {
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: (index + 2) * 0.1 }}
+              {...cardReveal(index + flagshipProjects.length)}
               className="lg:col-span-2 bg-dark-surface border border-white/5 rounded-xl p-8 hover:-translate-y-2 hover:border-neon-green/50 transition-all duration-300 group"
             >
               <div className="flex justify-between items-center mb-6">

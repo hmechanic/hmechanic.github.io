@@ -1,13 +1,15 @@
 import { motion } from 'framer-motion';
-import { FaLinkedin, FaGithub } from 'react-icons/fa';
 import { useI18n } from '@/hooks/useI18n';
 import { useReveal } from '@/hooks/useReveal';
+import SocialLinks from '@/components/layout/SocialLinks';
 
 const Contact = () => {
-  const { t } = useI18n();
+  const { t, cv } = useI18n();
   const reveal = useReveal();
   const phoneNumber = '573227325656';
   const message = encodeURIComponent(t.contact.whatsappMessage);
+  const socials = cv.subheading.find((s) => s.type === 'socials')?.content || [];
+  const email = cv.subheading.find((s) => s.type === 'links')?.content[0]?.name;
 
   return (
     <section id="contact" className="py-24 px-6 text-center relative">
@@ -26,14 +28,9 @@ const Contact = () => {
             {t.contact.cta}
           </a>
 
-          <div className="mt-16 flex justify-center gap-8 md:hidden">
-            {/* Only show on mobile as desktop has them in navbar */}
-            <a href="https://github.com/hmechanic" className="text-gray-400 hover:text-white">
-              <FaGithub size={24} />
-            </a>
-            <a href="https://linkedin.com/in/hmechanic" className="text-gray-400 hover:text-white">
-              <FaLinkedin size={24} />
-            </a>
+          {/* Below lg the navbar collapses to the menu, so surface the links here too. */}
+          <div className="mt-16 flex justify-center gap-8 lg:hidden">
+            <SocialLinks socials={socials} email={email} size={24} />
           </div>
         </motion.div>
       </div>

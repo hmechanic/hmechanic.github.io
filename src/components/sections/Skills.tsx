@@ -1,11 +1,12 @@
 import { motion } from 'framer-motion';
 import { useI18n } from '@/hooks/useI18n';
-import { useReveal } from '@/hooks/useReveal';
+import { useCardReveal, useReveal } from '@/hooks/useReveal';
 import { SkillCategory } from '@/types/cv';
 
 const Skills = () => {
   const { t, cv } = useI18n();
   const headingReveal = useReveal();
+  const cardReveal = useCardReveal(0.1);
   // Match by section type (language-independent); the skills section has a
   // single content group whose label differs per language.
   const skillsData = (cv.sections.find((s) => s.type === 'skills')?.content?.[0]?.entity ||
@@ -32,9 +33,7 @@ const Skills = () => {
           {skillsData.map((category, index) => (
             <motion.div
               key={category.name}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ delay: index * 0.1 }}
+              {...cardReveal(index)}
               className="bg-white/5 border border-white/10 rounded-lg p-6 backdrop-blur-xs"
             >
               <h3 className="text-xl font-bold text-neon-magenta mb-4">{category.name}</h3>

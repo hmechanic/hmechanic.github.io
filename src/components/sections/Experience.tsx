@@ -1,11 +1,12 @@
 import { motion } from 'framer-motion';
 import { useI18n } from '@/hooks/useI18n';
-import { useReveal } from '@/hooks/useReveal';
+import { useCardReveal, useReveal } from '@/hooks/useReveal';
 import { ExperienceGroup } from '@/types/cv';
 
 const Experience = () => {
   const { t, cv } = useI18n();
   const headingReveal = useReveal();
+  const cardReveal = useCardReveal(0.1);
   // Gather every `experience` section and flatten their content groups so that
   // Professional Experience, Teaching and Volunteering, and Certifications are
   // all rendered (matching by `type`, not by translatable label text).
@@ -35,9 +36,7 @@ const Experience = () => {
                 {group.entity.map((job, index) => (
                   <motion.div
                     key={`${job.organization}-${job.dates}`}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.1 }}
+                    {...cardReveal(index, 'left')}
                     className="relative pl-8 md:pl-12"
                   >
                     {/* Dot on timeline */}

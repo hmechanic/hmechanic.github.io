@@ -2,6 +2,8 @@ import { Mail } from 'lucide-react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import type { SubheadingItem } from '@/types/cv';
 
+const LABELS: Record<string, string> = { github: 'GitHub', linkedin: 'LinkedIn' };
+
 type SocialLinksProps = {
   socials: SubheadingItem[];
   email?: string;
@@ -22,6 +24,7 @@ const SocialLinks = ({ socials, email, size }: SocialLinksProps) => (
         href={social.url}
         target="_blank"
         rel="noopener noreferrer"
+        aria-label={LABELS[social.type ?? ''] ?? social.url}
         className="text-white hover:text-neon-magenta transition-colors"
       >
         {social.type === 'github' && <FaGithub size={size} />}
@@ -29,7 +32,7 @@ const SocialLinks = ({ socials, email, size }: SocialLinksProps) => (
       </a>
     ))}
     {email && (
-      <a href={`mailto:${email}`} className="text-white hover:text-neon-green transition-colors">
+      <a href={`mailto:${email}`} aria-label={email} className="text-white hover:text-neon-green transition-colors">
         <Mail size={size} />
       </a>
     )}

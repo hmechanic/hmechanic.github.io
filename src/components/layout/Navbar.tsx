@@ -18,9 +18,25 @@ const Navbar = () => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
-    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Close the mobile menu with Escape, and when the viewport grows past lg
+  // (the menu is lg:hidden, so it would otherwise reopen stale on shrinking).
+  useEffect(() => {
+    if (!isOpen) return;
+    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && setIsOpen(false);
+    const lg = window.matchMedia('(min-width: 1024px)');
+    const onResize = () => lg.matches && setIsOpen(false);
+    window.addEventListener('keydown', onKey);
+    lg.addEventListener('change', onResize);
+    return () => {
+      window.removeEventListener('keydown', onKey);
+      lg.removeEventListener('change', onResize);
+    };
+  }, [isOpen]);
 
   const socials = cv.subheading.find((s) => s.type === 'socials')?.content || [];
   const email = cv.subheading.find((s) => s.type === 'links')?.content[0]?.name;
@@ -28,7 +44,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-black/80 backdrop-blur-md py-4' : 'bg-transparent py-6'}`}
+      className={`fixed w-full z-50 transition-all duration-300 ${scrolled || isOpen ? 'bg-dark-bg/80 backdrop-blur-md border-b border-white/5 py-4' : 'bg-transparent border-b border-transparent py-6'}`}
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center pl-[max(1.5rem,env(safe-area-inset-left))] pr-[max(1.5rem,env(safe-area-inset-right))]">
         <Link
