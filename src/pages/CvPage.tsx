@@ -7,28 +7,39 @@ type PdfStatus = 'loading' | 'available' | 'missing';
 type PdfCheck = {
   url: string;
   status: PdfStatus;
+  src: string;
 };
 
 const CvPage = () => {
   const { lang, t } = useI18n();
   const pdfUrl = `/cv/cv-${lang}.pdf`;
-  const [pdfCheck, setPdfCheck] = useState<PdfCheck>({ url: pdfUrl, status: 'loading' });
+  const [pdfCheck, setPdfCheck] = useState<PdfCheck>({
+    url: pdfUrl,
+    status: 'loading',
+    src: pdfUrl,
+  });
   const pdfStatus = pdfCheck.url === pdfUrl ? pdfCheck.status : 'loading';
+  const pdfSrc = pdfCheck.url === pdfUrl ? pdfCheck.src : pdfUrl;
 
   useEffect(() => {
     const controller = new AbortController();
 
-    fetch(pdfUrl, { method: 'HEAD', signal: controller.signal })
+    // The PDF keeps the same path when it is regenerated, so the browser may hold
+    // an old copy. Revalidate the HEAD request and version the URL with its ETag:
+    // a new file gets a new URL, an unchanged one still comes from the cache.
+    fetch(pdfUrl, { method: 'HEAD', cache: 'no-cache', signal: controller.signal })
       .then((response) => {
         const contentType = response.headers.get('content-type') || '';
+        const version = response.headers.get('etag') || response.headers.get('last-modified');
         setPdfCheck({
           url: pdfUrl,
           status: response.ok && contentType.includes('application/pdf') ? 'available' : 'missing',
+          src: version ? `${pdfUrl}?v=${encodeURIComponent(version)}` : pdfUrl,
         });
       })
       .catch((error: unknown) => {
         if (error instanceof DOMException && error.name === 'AbortError') return;
-        setPdfCheck({ url: pdfUrl, status: 'missing' });
+        setPdfCheck({ url: pdfUrl, status: 'missing', src: pdfUrl });
       });
 
     return () => controller.abort();
@@ -55,7 +66,7 @@ const CvPage = () => {
             </div>
             {pdfStatus === 'available' ? (
               <a
-                href={pdfUrl}
+                href={pdfSrc}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-sm border border-neon-cyan px-5 py-3 font-mono text-sm uppercase tracking-wider text-neon-cyan transition-colors hover:bg-neon-cyan hover:text-black"
@@ -80,8 +91,8 @@ const CvPage = () => {
         >
           {pdfStatus === 'available' ? (
             <object
-              key={pdfUrl}
-              data={pdfUrl}
+              key={pdfSrc}
+              data={pdfSrc}
               type="application/pdf"
               className="h-[72vh] min-h-[520px] w-full bg-white"
               aria-label={t.cvPage.title}
@@ -89,7 +100,7 @@ const CvPage = () => {
               <div className="flex min-h-[520px] flex-col items-center justify-center gap-4 p-8 text-center">
                 <p className="max-w-xl text-gray-300">{t.cvPage.fallback}</p>
                 <a
-                  href={pdfUrl}
+                  href={pdfSrc}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-neon-cyan hover:text-white"
