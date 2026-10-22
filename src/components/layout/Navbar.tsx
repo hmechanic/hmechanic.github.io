@@ -39,8 +39,8 @@ const Navbar = () => {
           H<span className="text-white">Mechanic</span>
         </Link>
 
-        {/* Desktop Menu */}
-        <div className="hidden md:flex items-center space-x-8">
+        {/* Desktop Menu (from lg: the full menu does not fit on tablets / landscape phones) */}
+        <div className="hidden lg:flex items-center space-x-8">
           {t.nav.items.map((item) => (
             <Link
               key={item.id}
@@ -64,7 +64,7 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Toggle */}
-        <div className="flex items-center gap-3 md:hidden">
+        <div className="flex items-center gap-3 lg:hidden">
           <LanguageToggle />
           <button
             type="button"
@@ -85,7 +85,7 @@ const Navbar = () => {
           id="mobile-menu"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="md:hidden absolute top-full left-0 w-full bg-black/95 backdrop-blur-xl border-t border-white/10 py-6 pl-[max(1.5rem,env(safe-area-inset-left))] pr-[max(1.5rem,env(safe-area-inset-right))] flex flex-col space-y-6"
+          className="lg:hidden absolute top-full left-0 w-full bg-black/95 backdrop-blur-xl border-t border-white/10 py-6 pl-[max(1.5rem,env(safe-area-inset-left))] pr-[max(1.5rem,env(safe-area-inset-right))] flex flex-col space-y-6"
         >
           {t.nav.items.map((item) => (
             <Link

@@ -25,9 +25,12 @@ const Hero = () => {
   const [showBackground, setShowBackground] = useState(false);
 
   return (
+    // The layout follows orientation, like the 3D scene does: in portrait the copy
+    // is anchored to the bottom (near the thumb) and the reaction owns the top; in
+    // landscape the copy sits on the left and the reaction on the right.
     <section
       id="home"
-      className="min-h-svh w-full flex items-center relative overflow-hidden pt-24 pb-12 md:pt-20 md:pb-0"
+      className="min-h-svh w-full flex items-end landscape:items-center relative overflow-hidden pt-28 pb-10 landscape:pt-24"
     >
       {/* Full-bleed animated background (three.js loaded lazily + deferred to idle,
                 fading in so its warm-up never stutters the hero intro). */}
@@ -42,13 +45,14 @@ const Hero = () => {
         )}
       </div>
 
-      {/* Legibility overlay: darkens toward the left where the copy sits */}
-      <div className="absolute inset-0 z-1 pointer-events-none bg-linear-to-r from-dark-bg via-dark-bg/70 to-transparent" />
+      {/* Legibility overlay: darkens toward the copy (bottom in portrait, left in landscape) */}
+      <div className="absolute inset-0 z-1 pointer-events-none landscape:hidden bg-linear-to-t from-dark-bg via-dark-bg/80 via-45% to-transparent" />
+      <div className="absolute inset-0 z-1 pointer-events-none hidden landscape:block bg-linear-to-r from-dark-bg via-dark-bg/70 to-transparent" />
       {/* Soft vertical vignette to seat the text against the scene */}
       <div className="absolute inset-0 z-1 pointer-events-none bg-linear-to-b from-dark-bg/40 via-transparent to-dark-bg/60" />
 
       {/* Text Content */}
-      <div className="relative z-10 w-full md:w-3/5 flex flex-col justify-center items-start px-6 sm:px-8 md:pl-20">
+      <div className="relative z-10 w-full landscape:w-3/5 flex flex-col justify-center items-start px-6 sm:px-8 md:landscape:pl-20">
         <motion.div
           className="w-full max-w-lg lg:max-w-xl"
           initial={{ opacity: 0, x: -50 }}
@@ -56,7 +60,7 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
           onAnimationComplete={() => whenIdle(() => setShowBackground(true))}
         >
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-4 sm:mb-6 leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl short:text-4xl font-bold mb-4 sm:mb-6 short:mb-3 leading-tight">
             {t.hero.greeting}{' '}
             <span className="whitespace-nowrap">
               {t.hero.namePrefix}{' '}
@@ -67,8 +71,10 @@ const Hero = () => {
           </h1>
           <div className="relative mb-6 sm:mb-8 w-full group">
             <div className="absolute -inset-1 bg-linear-to-r from-neon-cyan to-neon-purple opacity-20 blur-sm transition duration-1000 group-hover:opacity-40"></div>
-            <div className="relative bg-black/60 backdrop-blur-md border-l-4 border-neon-cyan p-5 sm:p-6 rounded-r-xl shadow-[0_0_24px_rgba(0,243,255,0.12)]">
-              <div className="text-gray-200 text-sm sm:text-base leading-7 sm:leading-8 text-pretty space-y-4">
+            {/* backdrop-blur only on desktop: over an animated canvas it re-blurs every
+                frame, which is a noticeable cost on phones/tablets for little visual gain. */}
+            <div className="relative bg-black/75 lg:bg-black/60 lg:backdrop-blur-md border-l-4 border-neon-cyan p-5 sm:p-6 short:p-4 rounded-r-xl shadow-[0_0_24px_rgba(0,243,255,0.12)]">
+              <div className="text-gray-200 text-sm sm:text-base short:text-sm leading-6 sm:leading-8 short:leading-6 text-pretty space-y-3 sm:space-y-4 short:space-y-3">
                 {t.hero.tagline}
               </div>
             </div>

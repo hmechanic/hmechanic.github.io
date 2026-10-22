@@ -2,6 +2,9 @@
 
 @import 'tailwindcss';
 
+/* Short viewports (landscape phones): compact type so the hero still fits. */
+@custom-variant short (@media (max-height: 520px));
+
 @theme {
   --color-neon-cyan: #00f3ff;
   --color-neon-magenta: #ff00ff;
