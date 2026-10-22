@@ -167,6 +167,11 @@ const BURN_TIME = 0.55; // reactants collapse + heat up before the flash
 const FLASH_TIME = 0.5;
 const RING_TIME = 1.1;
 const HEAT_DECAY = 2.4; // seconds for products to cool (e-folding)
+// Portrait framing, as fractions of the canvas height measured from the top.
+const PORTRAIT_TOP_INSET = 0.12; // clear of the navbar
+const PORTRAIT_COPY_TOP = 0.46; // assumed copy start until the page reports it
+const PORTRAIT_MARGIN = 0.07; // gap kept above the copy
+const PORTRAIT_MIN_BAND = 0.14;
 
 // --- Small helpers (no allocation) ---
 const rand = (min: number, max: number) => min + Math.random() * (max - min);
@@ -233,13 +238,17 @@ export interface CombustionOptions {
   reducedMotion: boolean;
 }
 
-// The bit of r3f's per-frame state this scene needs.
+// Per-frame inputs, supplied by the host component (HeroBackground).
 export interface FrameState {
   camera: THREE.Camera;
+  /** Pointer in normalised canvas coordinates (-1..1). */
   pointer: THREE.Vector2;
+  /** Canvas size in CSS pixels. */
   size: { width: number; height: number };
+  /** World size of the z = 0 plane, plus the renderer's pixel ratio. */
   viewport: { width: number; height: number; dpr: number };
-  clock: THREE.Clock;
+  /** Seconds since the scene started. */
+  elapsed: number;
 }
 
 const makeLabelAtlas = () => {
@@ -404,6 +413,9 @@ export const createCombustionScene = ({ small, labels, reducedMotion }: Combusti
   // resizes / rotations re-frame the scene smoothly.
   const zone: Zone = { cx: 0, cy: 0, hw: 1, hh: 1 };
   let molScale = 1;
+  // Portrait only: where the copy starts, as a fraction of the canvas height
+  // from the top. The page measures it (it varies with text length and screen).
+  let copyTop = PORTRAIT_COPY_TOP;
   let initialised = false;
   let populationTimer = 0;
 
@@ -416,11 +428,15 @@ export const createCombustionScene = ({ small, labels, reducedMotion }: Combusti
       zone.hh = vh * 0.33;
       molScale = 1;
     } else {
-      // Portrait: the copy sits at the bottom, so the reaction owns the top.
+      // Portrait: the copy sits at the bottom, so the reaction owns the band
+      // between the navbar and the top of the copy (never thinner than
+      // PORTRAIT_MIN_BAND: on tiny screens it may run behind the heading).
+      const top = PORTRAIT_TOP_INSET;
+      const bottom = Math.max(copyTop - PORTRAIT_MARGIN, top + PORTRAIT_MIN_BAND);
       zone.cx = 0;
-      zone.cy = vh * 0.21;
+      zone.cy = vh * (0.5 - (top + bottom) / 2);
       zone.hw = vw * 0.34;
-      zone.hh = vh * 0.15;
+      zone.hh = (vh * (bottom - top)) / 2;
       molScale = 0.68;
     }
   };
@@ -838,8 +854,8 @@ export const createCombustionScene = ({ small, labels, reducedMotion }: Combusti
 
   // --- Frame update ---
   const update = (state: FrameState, dt: number) => {
-    const { viewport, size, camera, pointer, clock } = state;
-    const t = clock.elapsedTime;
+    const { viewport, size, camera, pointer } = state;
+    const t = state.elapsed;
     updateZone(viewport.width, viewport.height);
 
     if (!initialised) {
@@ -908,5 +924,10 @@ export const createCombustionScene = ({ small, labels, reducedMotion }: Combusti
     labelAtlas?.dispose();
   };
 
-  return { root, update, dispose, background: BACKGROUND };
+  /** Portrait framing: where the copy starts, as a 0..1 fraction from the top. */
+  const setCopyTop = (fraction: number) => {
+    copyTop = fraction;
+  };
+
+  return { root, update, setCopyTop, dispose, background: BACKGROUND };
 };

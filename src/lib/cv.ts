@@ -1,16 +1,12 @@
-import { load } from 'js-yaml';
-import cvEsRaw from '@/content/cv/cv-es.yaml?raw';
-import cvEnRaw from '@/content/cv/cv-en.yaml?raw';
+import cvEs from '@/content/cv/cv-es.yaml';
+import cvEn from '@/content/cv/cv-en.yaml';
 
-import { CvData } from '@/types/cv';
+import type { CvData } from '@/types/cv';
 import type { Language } from '@/i18n/types';
 
-// One parsed CV per supported language. Components pick the right one based on
-// the active language from the i18n context.
+// One CV per supported language, parsed at build time (see the yaml plugin in
+// vite.config.ts). Components pick the right one from the i18n context.
 export const cvByLang: Record<Language, CvData> = {
-  es: load(cvEsRaw) as CvData,
-  en: load(cvEnRaw) as CvData,
+  es: cvEs as CvData,
+  en: cvEn as CvData,
 };
-
-// Backwards-compatible default (Spanish) for any non-localized usage.
-export const cvData = cvByLang.es;

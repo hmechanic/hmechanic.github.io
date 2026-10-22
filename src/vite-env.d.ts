@@ -1,6 +1,7 @@
 /// <reference types="vite/client" />
 
-declare module '*.yaml?raw' {
-  const content: string;
-  export default content;
+// Parsed at build time by the yaml plugin in vite.config.ts.
+declare module '*.yaml' {
+  const data: unknown;
+  export default data;
 }
