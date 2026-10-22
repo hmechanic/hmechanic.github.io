@@ -19,34 +19,32 @@ subheading:
 professional_profile:
     title: "Perfil Profesional"
     content: "
-    Soy ingeniero mecánico y he orientado mi carrera profesional hacia dos áreas principales.
+      Soy ingeniero mecánico y he orientado mi carrera profesional hacia dos áreas principales.
 
-    La primera es la participación activa en investigación aplicada, especialmente en temas
-    relacionados con energía, cambio climático, análisis de datos y modelación de sistemas.
-    La segunda es el desarrollo de software complejo para resolver problemas de ingeniería y
-    construir productos tecnológicos. En esta área implemento tecnologías relacionadas con
-    el análisis y la gestión de datos, el desarrollo de software y la creación de proyectos
-    *AI First*, incluyendo programación de agentes, diseño de arquitecturas de machine learning,
-    automatización de procesos e integración de sistemas.
+      La primera es construir productos y empresas: hacer cosas difíciles y sostener la
+      resiliencia que ese proceso exige. Esto implica desarrollar tecnología, hablar con clientes
+      e iterar hasta llegar a soluciones conectadas con las necesidades reales de las personas.
+      Aquí desarrollo software y proyectos *AI First*, con programación de agentes, arquitecturas
+      de machine learning, automatización de procesos e integración de sistemas.
 
-    Mi formación complementaria incluye inteligencia artificial, machine learning, análisis
-    de datos e ingeniería de software. Entre mis trabajos recientes se encuentran dos proyectos
-    principales: SatEmis, una plataforma orientada a la investigación climática, el análisis de
-    datos satelitales y la aplicación de modelos de machine learning a escala; y OrionAtiende.com,
-    un SaaS para la implementación personalizada de agentes especializados en ventas y soporte al
-    cliente, dirigido a empresas con necesidades intensivas de atención y gestión de usuarios.
-    Ambos proyectos pueden explorarse con mayor detalle en la sección de proyectos.
+      La segunda es la participación activa en investigación aplicada, especialmente en energía,
+      cambio climático, análisis de datos y modelación de sistemas.
 
-    Como profesional, también presto servicios de consultoría en ingeniería mecánica, con énfasis
-    en las áreas térmica y de fluidos. Mi trabajo incluye energías renovables, modelación
-    energética, dinámica de fluidos computacional —CFD—, mitigación del cambio climático,
-    elaboración de inventarios de emisiones y monitoreo remoto.
+      Entre mis trabajos recientes se destacan dos proyectos: OrionAtiende.com, un SaaS de agentes
+      de IA para ventas y atención al cliente por WhatsApp, y SatEmis, una plataforma de
+      investigación climática que aplica machine learning a datos satelitales a escala. Orion ha
+      sido mi proyecto más retador: me ha enseñado a construir un producto, venderlo, enfrentar el
+      rechazo, gestionar recursos e iterar, tomando decisiones basadas en datos y no en sentimientos.
 
-    En el área de software, trabajo como ingeniero líder en el diseño y desarrollo de proyectos.
-    Cuento con cerca de cuatro años de experiencia certificada y me especializo en la construcción
-    de soluciones que integran datos, inteligencia artificial, software e ingeniería aplicada.
+      Como consultor en ingeniería mecánica trabajo en las áreas térmica y de fluidos: energías
+      renovables, modelación energética, dinámica de fluidos computacional —CFD—, mitigación del
+      cambio climático, inventarios de emisiones y monitoreo remoto.
 
-    "
+      Cuento con cerca de cuatro años de experiencia certificada como ingeniero líder en diseño y
+      desarrollo de software, construyendo soluciones que integran datos, inteligencia artificial
+      e ingeniería aplicada.
+
+      "
 
 sections:
   - type: education
@@ -81,15 +79,16 @@ sections:
         entity:
           - organization: "Orion AI"
             dates: "Marzo de 2026 - Presente"
-            position: "Creador y Líder Técnico"
+            position: "Fundador y desarrollador full-stack"
             responsibilities:
-              - "Lideré desde cero el diseño, desarrollo y evolución de Orion AI, una plataforma SaaS multiempresa que integra CRM, agentes conversacionales y automatización de ventas y soporte por WhatsApp."
-              - "Diseñé una arquitectura full-stack con Next.js, React, TypeScript, FastAPI y PostgreSQL, aplicando procesamiento asíncrono, aislamiento por empresa y patrones server-first."
-              - "Implementé agentes con LangGraph, memoria conversacional persistente y herramientas para consultar conocimiento, actualizar el embudo comercial y transferir conversaciones a asesores humanos."
-              - "Construí un sistema RAG con Qdrant para indexar PDF, Markdown y TXT, con embeddings configurables, búsqueda semántica aislada por agente y workers durables con reintentos."
-              - "Integré Chatwoot, WhatsApp Cloud y Notion para gestionar canales, webhooks, notas de voz, Agent Bots y sincronización bidireccional de leads."
-              - "Desarrollé el CRM y su analítica operacional, incluyendo seguimiento de leads, roles y permisos, estados de pago, métricas de conversión y gestión de bases de conocimiento."
-              - "Definí la seguridad, observabilidad y operación del producto mediante JWT, RBAC, cifrado de credenciales, rate limiting, métricas Prometheus, pruebas automatizadas, Docker y despliegues en Railway y VPS."
+              - "Fundé y construí de punta a punta Orion AI (orionatiende.com), un SaaS multiempresa en producción que atiende por WhatsApp con agentes de IA y convierte cada conversación en un CRM operable. Me encargué del producto, la arquitectura, el cobro y la salida al mercado."
+              - "Desarrollé el backend en FastAPI y PostgreSQL y el frontend en Next.js 16 (React, TypeScript, Server Components y BFF). Incluye aislamiento de datos por empresa, workers asíncronos con outbox y reintentos idempotentes, y cerca de 1.900 pruebas automatizadas a lo largo de casi 600 commits."
+              - "Diseñé el motor conversacional con LangGraph: memoria persistente, transcripción de notas de voz y herramientas para consultar conocimiento, mover el embudo y escalar a asesores humanos en Chatwoot. El contacto y el deal se registran de forma determinista antes de invocar al modelo, así el LLM solo modifica datos que ya existen."
+              - "Construí un RAG sobre Qdrant para PDF, Markdown y TXT, con embeddings configurables, búsqueda aislada por agente y un worker de indexación durable. Integré además un modelo clasificador que ubica cada conversación en la etapa del embudo."
+              - "Llevé la integración con Meta hasta el final: verificación del negocio, App Review aprobado para los permisos de WhatsApp Business y un flujo propio de Embedded Signup v4 con el que cada empresa conecta su número sin soporte manual."
+              - "Implementé suscripciones recurrentes con Wompi (tarjeta con 3DS, renovación, retención y control de acceso por plan) y la seguridad de la plataforma: login sin contraseña (código por correo y Google), JWT, RBAC con permisos finos, cifrado de credenciales y rate limiting. Opero el sistema en Railway y en un VPS con Docker y Chatwoot autoalojado, con métricas Prometheus y alertas en Grafana."
+              - "Validé el mercado en campo con llamadas a +200 negocios de turismo (70 respuestas y 30 demos) y actualmente 8 clientes pagos. Armé un pipeline de prospección sobre datos abiertos del Registro Nacional de Turismo (unas 95.000 empresas) y meta adds catalog para un experimento iterativo de descubrimiento del cliente ideal."
+              - "Organicé el desarrollo como un equipo de agentes de IA (Claude Code y OpenCode), con una sesión por repositorio, coordinados desde una base de conocimiento que un pipeline con LLM mantiene sincronizada con los commits."
 
           - organization: "SatEmis"
             dates: "Agosto de 2025 - Presente"
