@@ -147,7 +147,9 @@ export const en: Translation = {
   },
   experience: {
     title: 'Experience',
-    viewCertificate: 'View certificate ↗',
+    current: 'Current',
+    showMore: 'Show {count} more',
+    showLess: 'Show less',
   },
   skills: {
     title: (

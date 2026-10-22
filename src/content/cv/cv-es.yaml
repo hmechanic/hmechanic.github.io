@@ -51,7 +51,7 @@ sections:
     content:
       - name: "Educación"
         entity:
-          - university: "Universidad nacional de Colombia"
+          - university: "Universidad Nacional de Colombia"
             location: "Bogotá, Colombia"
             dates: "Febrero de 2018 - Diciembre de 2024"
             degree: "Grado en *Ingeniería Mecánica*"
@@ -87,7 +87,7 @@ sections:
               - "Construí un RAG sobre Qdrant para PDF, Markdown y TXT, con embeddings configurables, búsqueda aislada por agente y un worker de indexación durable. Integré además un modelo clasificador que ubica cada conversación en la etapa del embudo."
               - "Llevé la integración con Meta hasta el final: verificación del negocio, App Review aprobado para los permisos de WhatsApp Business y un flujo propio de Embedded Signup v4 con el que cada empresa conecta su número sin soporte manual."
               - "Implementé suscripciones recurrentes con Wompi (tarjeta con 3DS, renovación, retención y control de acceso por plan) y la seguridad de la plataforma: login sin contraseña (código por correo y Google), JWT, RBAC con permisos finos, cifrado de credenciales y rate limiting. Opero el sistema en Railway y en un VPS con Docker y Chatwoot autoalojado, con métricas Prometheus y alertas en Grafana."
-              - "Validé el mercado en campo con llamadas a +200 negocios de turismo (70 respuestas y 30 demos) y actualmente 8 clientes pagos. Armé un pipeline de prospección sobre datos abiertos del Registro Nacional de Turismo (unas 95.000 empresas) y meta adds catalog para un experimento iterativo de descubrimiento del cliente ideal."
+              - "Validé el mercado en campo con llamadas a +200 negocios de turismo (70 respuestas y 30 demos) y actualmente 8 clientes pagos. Armé un pipeline de prospección sobre datos abiertos del Registro Nacional de Turismo (unas 95.000 empresas) y el catálogo de anuncios de Meta para un experimento iterativo de descubrimiento del cliente ideal."
               - "Organicé el desarrollo como un equipo de agentes de IA (Claude Code y OpenCode), con una sesión por repositorio, coordinados desde una base de conocimiento que un pipeline con LLM mantiene sincronizada con los commits."
 
           - organization: "SatEmis"
@@ -101,18 +101,18 @@ sections:
               - "Integré capacidades de inteligencia artificial para consultar y contextualizar normativa climática, facilitando la interpretación de información ambiental."
               - "Contenericé y optimicé los servicios en Google Cloud Platform (GCP) para mejorar el uso de recursos de procesamiento y almacenamiento."
 
-          - organization: "Universidad nacional de Colombia"
+          - organization: "Universidad Nacional de Colombia"
             dates: "Febrero de 2024 - Julio de 2025"
             position: "Investigador y analista de sistemas energéticos"
             responsibilities:
               - "Desarrollo del modelo de referencia energético nacional de Colombia utilizando el framework VEDA de TIMES (IEA-ETSAP)."
-              - "Recolección y tratamiendo de datos del sistema energético colombiano por sectores económicos y regiones."
+              - "Recolección y tratamiento de datos del sistema energético colombiano por sectores económicos y regiones."
               - "Procesamiento de grandes conjuntos de datos y desarrollo de herramientas analíticas utilizando Python."
               - "Proyección de escenarios de transición energética alineados con los planes nacionales de cambio climático."
-              - "Liderazgo y coordinación de equipos multidiciplinarios."
+              - "Liderazgo y coordinación de equipos multidisciplinarios."
               - "Comunicación efectiva de resultados técnicos a audiencias no técnicas."
 
-          - organization: "Universidad nacional de Colombia"
+          - organization: "Universidad Nacional de Colombia"
             dates: "Abril de 2022 - Febrero de 2024"
             position: "Asistente de Investigación - Facultad de Ingeniería"
             responsibilities:
@@ -125,7 +125,7 @@ sections:
 
       - name: "Docencia y Voluntariado"
         entity:
-          - organization: "Universidad nacional de Colombia"
+          - organization: "Universidad Nacional de Colombia"
             dates: "Febrero de 2023 - Noviembre de 2023"
             position: "Instructor"
             supervisor: "M.Sc Luis Carlos Trujillo"
@@ -149,18 +149,18 @@ sections:
             certificate: "https://drive.google.com/file/d/1jTdB9KHhdZ72HzhHKaGwvHEhy1stSp0Q/view?usp=sharing"
           - organization: "Ingeniería de Procesos para la Transición Energética"
             dates: "Graduado en Julio de 2023"
-            position: "Universidad nacional de Colombia"
+            position: "Universidad Nacional de Colombia"
             certificate: "https://drive.google.com/file/d/1C1yyJAA1Mp0S8c8LYSN18HA8erlOOZ_z/view?usp=sharing"
           - organization: "MCP: Build Rich-Context AI Apps"
-            dates: "October 2025"
+            dates: "Octubre de 2025"
             position: "DeepLearning.AI"
             certificate: "https://learn.deeplearning.ai/accomplishments/ec70bf5a-587e-4179-bf0f-1fd46fb9d144?usp=sharing"
           - organization: "Sustainable Supply Chain Management"
-            dates: "Graduated December 2025"
+            dates: "Graduado en Diciembre de 2025"
             position: "MITx"
             certificate: "https://courses.edx.org/certificates/20176b453ed94252877f18951f6afa63"
           - organization: "Machine Learning with Python: from Linear Models to Deep Learning"
-            dates: "Graduated December 2025"
+            dates: "Graduado en Diciembre de 2025"
             position: "MITx"
             certificate: "https://courses.edx.org/certificates/c707c61237404b8fa6735f1a7bd99c73"
 

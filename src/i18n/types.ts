@@ -56,7 +56,11 @@ export interface Translation {
   };
   experience: {
     title: string;
-    viewCertificate: string;
+    /** Badge for roles whose dates run to the present. */
+    current: string;
+    /** Expands a role's achievements; `{count}` is the number still hidden. */
+    showMore: string;
+    showLess: string;
   };
   skills: {
     title: ReactNode;
